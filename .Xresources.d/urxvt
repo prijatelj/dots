@@ -1,0 +1,58 @@
+! Uncomment to disable perl-extension features to improve security and speed
+URxvt.perl-ext:
+URxvt.perl-ext-common:
+
+! Remove scrollbar:
+URxvt.scrollBar: false
+
+
+! Define colorscheme in general and for urxvt
+! special
+Rxvt.foreground:   FOREGROUND
+Rxvt.background:   BACKGROUND
+Rxvt.cursorColor:  CURSORCOLOR
+
+! black
+Rxvt.color0:       COLOR0
+Rxvt.color8:       COLOR8
+
+! red
+Rxvt.color1:       COLOR1
+Rxvt.color9:       COLOR9
+
+! green
+Rxvt.color2:       COLOR2
+Rxvt.color10:      COLOR10
+
+! yellow
+Rxvt.color3:       COLOR3
+Rxvt.color11:      COLOR11
+
+! blue
+Rxvt.color4:       COLOR4
+Rxvt.color12:      COLOR12
+
+! magenta
+Rxvt.color5:       COLOR5
+Rxvt.color13:      COLOR13
+
+! cyan
+Rxvt.color6:       COLOR6
+Rxvt.color14:      COLOR14
+
+! white
+Rxvt.color7:       COLOR8
+Rxvt.color15:      COLOR15
+
+
+! True transparency
+Rxvt.depth: 32
+Rxvt.background: rgba:1111/1111/1111/dddd
+
+
+! fonts
+!URxvt*font: xft:font:medium:size=fontsize
+!URxvt*boldFont: xft:font:size=fontsize
+!URxvt*italicFont: xft:font:italic:size=fontsize
+!URxvt*boldItalicFont: xft:font:bold:italic:size=fontsize
+!URxvt*internalBorder padding
