@@ -36,3 +36,4 @@ xrandr --output DP-2 --auto --output DVI-I-1 --auto --right-of DP-2
 compton -CGb --config $HOME/.config/compton.conf
 ~/.fehbg &
 i3
+unclutter &
