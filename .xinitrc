@@ -37,3 +37,4 @@ compton -CGb --config $HOME/.config/compton.conf
 ~/.fehbg &
 unclutter &
 i3
+unclutter &
