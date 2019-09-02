@@ -6,6 +6,3 @@
 ! For each application
 #include ".Xresources.d/urxvt"
 !#include ".Xresources.d/rofi"
-
-! run compton at start up.
-compton -b --config .config/compton.conf
