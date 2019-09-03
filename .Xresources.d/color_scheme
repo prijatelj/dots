@@ -20,7 +20,7 @@
 #define COLOR11      #f0c674
 
 ! blue
-#define COLOR4       #5f819d
+#define COLOR4       #1c263a
 #define COLOR12      #81a2be
 
 ! magenta
@@ -28,7 +28,7 @@
 #define COLOR13      #b294bb
 
 ! cyan
-#define COLOR6       #5e8d87
+#define COLOR6       #2a4f54
 #define COLOR14      #8abeb7
 
 ! white
