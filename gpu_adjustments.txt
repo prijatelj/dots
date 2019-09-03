@@ -1,0 +1,19 @@
+Adjust the GPU settings for better performance:
+
+raise the Nvidia GPU TDP by 150%.
+`
+nvidia-smi -pl float_value
+`
+
+consider driver persistence for setup after reading.
+to use driver persistence daemon:
+systemctl enable nvidia-persistenced.service
+
+Adds this to all monitor specifications under section Device to avoid startup time.
+`
+Option "ConnectedMonitor" "DFP"
+`
+
+Under Using NVIDIA Settings / ConnetedMonitor, able to specify all the expected visuals.
+
+also, when testing xinitrc with startx use `startx &` to get the prompt back.
