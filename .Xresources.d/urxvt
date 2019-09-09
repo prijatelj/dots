@@ -5,6 +5,8 @@ URxvt.perl-ext-common:
 ! Remove scrollbar:
 URxvt.scrollBar: false
 
+! Set scroll back history size:
+Rxvt.saveLines: 200000
 
 ! Define colorscheme in general and for urxvt
 ! special
@@ -51,8 +53,8 @@ Rxvt.background: rgba:1111/1111/1111/dddd
 
 
 ! fonts
-!URxvt*font: xft:font:medium:size=fontsize
-!URxvt*boldFont: xft:font:size=fontsize
-!URxvt*italicFont: xft:font:italic:size=fontsize
-!URxvt*boldItalicFont: xft:font:bold:italic:size=fontsize
+URxvt*font: xft:FONT:medium:size=FONT_SIZE
+URxvt*boldFont: xft:FONT:size=FONT_SIZE
+URxvt*italicFont: xft:FONT:italic:size=FONT_SIZE
+URxvt*boldItalicFont: xft:FONT:bold:italic:size=FONT_SIZE
 !URxvt*internalBorder padding
