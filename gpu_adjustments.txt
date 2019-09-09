@@ -17,3 +17,9 @@ Option "ConnectedMonitor" "DFP"
 Under Using NVIDIA Settings / ConnetedMonitor, able to specify all the expected visuals.
 
 also, when testing xinitrc with startx use `startx &` to get the prompt back.
+
+when setting up a Xorg with multiple gpus installed in system, must specify the PCI bus of the one being used in xorg.conf.
+
+use
+`nvidia-xconfig --query-gpu-info`
+to get the PCI bus of the gpus.
