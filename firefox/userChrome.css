@@ -1,0 +1,13 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
+
+/* Removing the scroll bar from firefox windows */
+:-moz-any(#content,#appcontent) browser{
+    margin-right:-14px!important;
+    overflow-y:scroll;
+    margin-bottom:-14px!important;
+    overflow-x:scroll;
+}
+
+/* can we universally change all scroll bars to be Dark, rather than white and light gray? */
+
+/* can we hide the scroll bar when not scrolling? if so can we make it transparent well? */
