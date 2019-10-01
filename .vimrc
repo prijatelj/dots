@@ -54,6 +54,8 @@ autocmd BufWritePre *.c,*.cc,*.cpp,*.java,*.php,*.py,*.html,*.css,*.pl,*.js,*.tx
 " Setting vim buffer size to 2000 lines max.
 set viminfo='20,<2000
 
+colorscheme zellner
+
 " Highlight column 80 and 200
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 let &colorcolumn="80,200"
