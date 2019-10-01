@@ -7,13 +7,11 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-" All other plugins
-
 " Adds a lightweight status bar.
 Plugin 'vim-airline/vim-airline'
 
 " Asynchronous error checking
-Plugin 'w0rp/ale'
+Plugin 'dense-analysis/ale'
 
 call vundle#end() 
 " filetype plugin indent on
