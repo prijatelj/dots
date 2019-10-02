@@ -13,11 +13,22 @@ Plugin 'vim-airline/vim-airline'
 " Asynchronous error checking
 Plugin 'dense-analysis/ale'
 
+" fxf: easy searching and opening of files and buffers
+" Plugin 'junegunn/fzf' " unnecessary on Arch Linx
+Plugin 'junegunn/fzf.vim'
+
 call vundle#end() 
 " filetype plugin indent on
 filetype plugin on
 
-let ale_enabled=0
+" ALE settings
+let g:ale_enabled = 0
+let g:ale_linters = {
+\   'python': ['pylint'],
+\}
+let g:ale_fixers = {
+\   'python': ['yapf'],
+\}
 
 " Personal settings
 syntax on
@@ -26,7 +37,7 @@ set number
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set autoindent
 set ruler
-" set backspace=indent,eol,start
+set backspace=indent,eol,start
 
 " Stop auto comment symbols being added
 set formatoptions-=ro
@@ -37,7 +48,8 @@ autocmd BufNewFile,BufRead * setlocal formatoptions-=ro
 set backspace=indent,eol,start
 
 " Remove trailing whitespaces on save for specifc files
-autocmd BufWritePre *.c,*.cc,*.cpp,*.java,*.php,*.py,*.html,*.css,*.pl,*.js,*.txt,*.r,*.cs,*.sh,*.m,*.yaml,*.json,*.md, mark w | %s/\s\+$//e | 'w
+autocmd BufWritePre *.c,*.cc,*.cpp,*.java,*.php,*.py,*.html,*.css,*.pl,*.js,
+\*.txt,*.r,*.cs,*.sh,*.m,*.yaml,*.json,*.md, mark w | %s/\s\+$//e | 'w
 
 " Changes for ignoring case and smart case during searches
 " set ignorecase
