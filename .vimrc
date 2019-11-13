@@ -38,6 +38,8 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set autoindent
 set ruler
 set backspace=indent,eol,start
+" Underlines the current line for cursor position.
+set cursorline
 
 " Stop auto comment symbols being added
 set formatoptions-=ro
