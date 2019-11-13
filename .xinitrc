@@ -37,3 +37,6 @@ compton -CGb --config $HOME/.config/compton.conf
 ~/.fehbg &
 unclutter --timeout 2 &
 i3
+
+# Set initial volume via ALSA
+#amixer -q sset Master,0 20
