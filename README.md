@@ -31,6 +31,7 @@
         - useful for saving more fine grained commits/ diffs
     + vim autocompletion?
 - i3
+    + Smaller increment adjustment of container sizes.
     + set login default volume
     + i3 volume controls
         - volume scroll wheel on keyboard if exists
