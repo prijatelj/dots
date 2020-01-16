@@ -2,12 +2,17 @@
 
 ## TODO
 - Get zsh
-    - replace all bash things with zsh things while ensuring able to use bash.
-    - zsh meant for interacting in terminal.
-    - setup tab completions, tab/up arrow history recall (similar to ipython),
+    + replace all bash things with zsh things while ensuring able to use bash.
+    + zsh meant for interacting in terminal.
+    + setup tab completions, tab/up arrow history recall (similar to ipython),
       longer history.
-- setup scripts for proper ssh security and optinal remote login
-- scripts / ntes for Vim setup
+    + figure out the other nice+ities of zsh.
+    + wc alias / scripts
+        - add aliased script for getting line count of code files but ignoring:
+        whitespace, empty lines, and all comments at least. (perhaps this exists)
+- security
+    + setup scripts for proper ssh security and optinal remote login
+- scripts / notes for Vim setup
     + Vundle
     + ALE
         - yapf and pylint and with custom pylint style.
