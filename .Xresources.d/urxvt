@@ -2,6 +2,10 @@
 URxvt.perl-ext:
 URxvt.perl-ext-common:
 
+! Disable the annoying keycap picture insert mode and ISO 14755 modes
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
 ! Remove scrollbar:
 URxvt.scrollBar: false
 
