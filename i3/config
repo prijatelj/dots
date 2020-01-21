@@ -175,7 +175,7 @@ bar {
 }
 
 # Shutdown, reboot, lock screen hotkeys given polkit
-set $Locker i3lock && sleep 1
+set $Locker i3lock -fc 000000 -B 1 --verifcolor FFFFFFFF --wrongcolor FFFFFFFF --layoutcolor FFFFFFFF --wrongcolor FFFFFFFF && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
