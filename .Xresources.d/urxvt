@@ -15,7 +15,7 @@ Rxvt.saveLines: 200000
 ! Define colorscheme in general and for urxvt
 ! special
 Rxvt.foreground:   FOREGROUND
-Rxvt.background:   BACKGROUND
+!Rxvt.background:   BACKGROUND
 Rxvt.cursorColor:  CURSORCOLOR
 
 ! black
@@ -53,7 +53,7 @@ Rxvt.color15:      COLOR15
 
 ! True transparency
 Rxvt.depth: 32
-Rxvt.background: rgba:1111/1111/1111/dddd
+Rxvt.background: rgba:1111/1111/1111/eeee
 
 
 ! fonts
@@ -62,3 +62,4 @@ URxvt*boldFont: xft:FONT:size=FONT_SIZE
 URxvt*italicFont: xft:FONT:italic:size=FONT_SIZE
 URxvt*boldItalicFont: xft:FONT:bold:italic:size=FONT_SIZE
 !URxvt*internalBorder padding
+!URxvtt.letterSpace: LETTER_SPACE

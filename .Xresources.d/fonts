@@ -1,3 +1,4 @@
-#define FONT Iosevka 
-#define FONT_SIZE 7
-!#define FONT_PAD 20 ???
+#define FONT Dina 
+#define FONT_SIZE 8
+!#define FONT_PAD 20
+!#define LETTER_SPACE -1
