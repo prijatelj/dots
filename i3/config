@@ -174,7 +174,7 @@ bar {
         status_command i3status
 }
 
-# Shutdown, reboot, lock screen hotkeys given polkit
+# Shutdown, reboot, lock screen hotkeys given polkit; Uses i3lock-color
 set $Locker i3lock -fc 000000 -B 1 --verifcolor FFFFFFFF --wrongcolor FFFFFFFF --layoutcolor FFFFFFFF --wrongcolor FFFFFFFF && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
