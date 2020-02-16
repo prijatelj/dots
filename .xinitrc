@@ -1,7 +1,7 @@
 #!/bin/sh
 
-userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
+userresources=$HOME/.config/Xresources
+usermodmap=$HOME/.config/Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
@@ -34,7 +34,7 @@ fi
 
 xrandr --output DP-2 --auto --output DVI-I-1 --auto --right-of DP-2
 picom -CGb --config $HOME/.config/picom.conf
-~/.fehbg &
+~/.config/fehbg.sh &
 unclutter --timeout 2 &
 i3
 
