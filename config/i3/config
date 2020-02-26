@@ -196,15 +196,42 @@ bindsym $mod+Pause mode "$mode_system"
 # assign workspace 1 to primary output display
 workspace 1 output DPY-2
 
-# Audio controls for ALSA, use comma (decrease) and period (incease) small, shift for large jump, slash to mute.
-# consider default: 5, ctrl 1, shift 10.
-bindsym $mod+period exec "amixer -q sset Master,0 1+ unmute"
-bindsym $mod+comma exec "amixer -q sset Master,0 1- unmute"
+# Audio controls for ALSA, use comma (decrease) and period (incease) small,
+# shift for large jump, slash to mute.
+# TODO consider default: 5, ctrl 1, shift 10.
+# Up/Down 1%
+#bindsym $mod+period exec "amixer -q sset Master,0 1+ unmute"
+#bindsym $mod+comma exec "amixer -q sset Master,0 1- unmute"
 
-bindsym $mod+Shift+period exec "amixer -q sset Master,0 5+ unmute"
-bindsym $mod+Shift+comma exec "amixer -q sset Master,0 5- unmute"
+# Up/Down 5%
+#bindsym $mod+Shift+period exec "amixer -q sset Master,0 5+ unmute"
+#bindsym $mod+Shift+comma exec "amixer -q sset Master,0 5- unmute"
 
-bindsym $mod+Ctrl+period exec "amixer -q sset Master,0 10+ unmute"
-bindsym $mod+Ctrl+comma exec "amixer -q sset Master,0 10- unmute"
+# Up/Down 10%
+#bindsym $mod+Ctrl+period exec "amixer -q sset Master,0 10+ unmute"
+#bindsym $mod+Ctrl+comma exec "amixer -q sset Master,0 10- unmute"
 
-bindsym $mod+slash exec "amixer -q sset Master,0 toggle"
+# Toggle Mute 10%
+#bindsym $mod+slash exec "amixer -q sset Master,0 toggle"
+
+# Mic: Toggle Mute
+# ??? Do not know how to do this atm with amixer
+
+# pulseaudio equivallent.
+# Up/Down 1%
+bindsym $mod+period exec "pactl set-sink-volume 0 +1%"
+bindsym $mod+comma exec "pactl set-sink-volume 0 -1%"
+
+# Up/Down 5%
+bindsym $mod+Shift+period exec "pactl set-sink-volume 0 +5%"
+bindsym $mod+Shift+comma exec "pactl set-sink-volume 0 -5%"
+
+# Up/Down 10%
+bindsym $mod+Ctrl+period exec "pactl set-sink-volume 0 +10%"
+bindsym $mod+Ctrl+comma exec "pactl set-sink-volume 0 -10%"
+
+# Toggle Mute 10%
+bindsym $mod+slash exec "pactl set-sink-mute 0 toggle"
+
+# Mic: Toggle Mute
+bindsym $mod+Shift+slash exec "pactl set-source-mute 0 toggle"
