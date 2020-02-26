@@ -24,6 +24,7 @@
         - vim spell check disabled by default,
     + fzf
     + vim yapf command on current file
+        - yapf selection of code (possibly ALE-ing a portion of code then).
     + vim support for LaTeX and writing.
         - vim spelling / grammar / etc correction.
         - turn off/on clean identing paragraph wrapping?
@@ -35,6 +36,10 @@
         - (or get fluent with cli through vim, though a command may be quicker)
         - useful for saving more fine grained commits/ diffs
     + vim autocompletion?
+    + alias or learn how to select a word or string in a file, and then replace
+      all occurrence of that string in the file with a new string.  So
+      basically, a means to take whatever is selected in selection mode and do
+      `%s/string_selected/whatever_replaces_it/g`
 - i3
     + Smaller increment adjustment of container sizes.
     + set login default volume
@@ -46,8 +51,8 @@
     + custom i3lock colors (and identifiaction of current signed in user)
     + vim-like markers possibly automated to ease jumping between containers
       within a window/screen.
-        - when having 3+ containers on one screen it' dbe nicer for a single
-          hotkey combo rather than a chain of them to get to the desired
+        - when having 3+ containers on one screen it'd be nicer for a single
+          or 2 hotkey combo rather than a chain of them to get to the desired
           container.
     + i3 bar:
         - indicator of current volume / audio output visualizer in db and freqs
@@ -62,6 +67,10 @@
         - and for ease of creating via a command or i3bar/dmenu type loading
           menu
         - setup neofetch rice layout
+    + Customizable contianer boarders and headers
+        - font of i3 and font size.
+        - Optionally hide/make visible via key command toggle.
+        - online adjustment of gaps
 - firefox
     + recolorize and add transparency to scroll bar
         - hide unless scrolling or somehow quering the scroll bar (to see page
