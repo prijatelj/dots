@@ -18,4 +18,4 @@ PATH="$PATH:~/.local/bin"
 #alias crc1='sshpass -f .ssh/password_keys/nd_crc ssh user@crcfe01.crc.nd.edu'
 
 # Notre Dame CRC SCP aliases
-#alias crc1_cp='sshpass -f .ssh/password_keys/nd_crc scp user@crcfe01.crc.nd.edu:'
+#alias crc1_cp='~/.config/rice_scripts/sshpass_scp.sh ~/.ssh/password_keys/nd_crc user@crcfe01.crc.nd.edu'
