@@ -48,6 +48,8 @@
         - pause / lay key on keyboard if exists
         - mute key on keyboard if exists
         - i3 bar / dmenu for assigning float value to set volume percent.
+        - i3 bar status of output volume and microphone [un]mute icon
+        - amixer command for toggle muting the microphone
     + custom i3lock colors (and identifiaction of current signed in user)
     + vim-like markers possibly automated to ease jumping between containers
       within a window/screen.
