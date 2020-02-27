@@ -19,7 +19,7 @@ fi
 # ${@:$#-1} is the src and dest
 
 
-if [ "$#" -gt 4 ] && [ "$3" == "--mkdirs" ]; then
+if [ "$#" -gt 4 ] && [ "$3" == "mkdirs" ]; then
     # If mkdirs given, make the  locally if they do not already
     # exist. `--mkdirs`
     # TODO consider wrapping rsync instead for these niceties.
