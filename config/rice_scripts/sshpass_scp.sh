@@ -17,9 +17,14 @@ fi
 # $2 is scp src's host
 # ${@:3:$#-4} is scp's options
 # ${@:$#-1} is the src and dest
-if [ "$#" -le 4 ]; then
-    echo "No options given"
-    sshpass -f "$1" scp "$2:${@:$#-1}"
+
+
+if [ "$#" -gt 4 ] && [ "$3" == "--mkdirs" ]; then
+    # If mkdirs given, make the  locally if they do not already
+    # exist. `--mkdirs`
+    # TODO consider wrapping rsync instead for these niceties.
+    mkdir -p "${@:$#}"
+    sshpass -f "$1" scp "${@:4:$#-5}" "$2:${@:$#-1}"
 else
     sshpass -f "$1" scp "${@:3:$#-4}" "$2:${@:$#-1}"
 fi
