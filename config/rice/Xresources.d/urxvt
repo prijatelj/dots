@@ -13,10 +13,15 @@ URxvt.scrollBar: false
 Rxvt.saveLines: 200000
 
 ! Define colorscheme in general and for urxvt
-! special
 Rxvt.foreground:   FOREGROUND
-!Rxvt.background:   BACKGROUND
+! Rxvt.background:   BACKGROUND
 Rxvt.cursorColor:  CURSORCOLOR
+
+! True background transparency
+Rxvt.depth: 32
+Rxvt.background: rgba:0000/0000/0000/cccc
+! have to try with compton or picom
+! urxvt*blurRadius: 5
 
 ! black
 Rxvt.color0:       COLOR0
@@ -50,13 +55,7 @@ Rxvt.color14:      COLOR14
 Rxvt.color7:       COLOR8
 Rxvt.color15:      COLOR15
 
-
-! True transparency
-Rxvt.depth: 32
-Rxvt.background: rgba:1111/1111/1111/eeee
-
-
-! fonts
+! Fonts
 URxvt*font: xft:FONT:medium:size=FONT_SIZE
 URxvt*boldFont: xft:FONT:size=FONT_SIZE
 URxvt*italicFont: xft:FONT:italic:size=FONT_SIZE

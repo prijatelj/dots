@@ -1,7 +1,7 @@
 #!/bin/sh
 
-userresources=$HOME/.config/Xresources
-usermodmap=$HOME/.config/Xmodmap
+userresources=$HOME/.config/rice/Xresources
+usermodmap=$HOME/.config/rice/Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
@@ -33,10 +33,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 xrandr --output DP-2 --auto --output DVI-I-1 --auto --right-of DP-2
-picom -CGb --config $HOME/.config/picom.conf
-~/.config/fehbg.sh &
+picom -CGb --config $HOME/.config/rice/picom.conf
+~/.config/rice/fehbg.sh &
 unclutter --timeout 2 &
 i3
 
-# Set initial volume via ALSA
+# Set initial volume via ALSA or Pulse Audio
 #amixer -q sset Master,0 20

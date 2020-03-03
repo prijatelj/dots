@@ -34,10 +34,3 @@
 ! white
 #define COLOR7       #707880
 #define COLOR15      FOREGROUND
-
-! fonts
-!#define FONT
-!#define FONT_SIZE  7
-!#define PADDING 20 ???
-
-!define LETTER_SPACE 0
