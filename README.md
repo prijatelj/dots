@@ -41,8 +41,9 @@
       basically, a means to take whatever is selected in selection mode and do
       `%s/string_selected/whatever_replaces_it/g`
 - i3
-    + Smaller increment adjustment of container sizes.
+    + Smaller increment adjustment for resizing containers.
     + set login default volume
+        - both alsa and pulseaudio versions.
     + i3 volume controls
         - volume scroll wheel on keyboard if exists
         - pause / lay key on keyboard if exists
@@ -56,6 +57,10 @@
         - when having 3+ containers on one screen it'd be nicer for a single
           or 2 hotkey combo rather than a chain of them to get to the desired
           container.
+        - The above here is about hotkeys within a workspace. Convenience
+          hotkeys for each screen may be of interest. Each screen has a hotkey
+          and the hotkey goes to that screen's active work space and active
+          container w/in that workspace.
     + i3 bar:
         - indicator of current volume / audio output visualizer in db and freqs
         - internet up and down speeds / usage and connected / used
