@@ -1,8 +1,0 @@
-! Load the theme variables
-#include ".Xresources.d/color_scheme"
-#include ".Xresources.d/fonts"
-
-
-! For each application
-#include ".Xresources.d/urxvt"
-!#include ".Xresources.d/rofi"

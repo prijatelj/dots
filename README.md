@@ -113,3 +113,6 @@
           if using Blender.
     + Reset the "hot fire" key to _NOT_ be back page in webbrowser (make this a
       different key).
+- General Keyboard config:
+    + Swap caps lock for some other key that is actually useful near the home
+      row (ie. ctrl), or at least make it a free key to assign hotkeys to.

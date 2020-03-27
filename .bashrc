@@ -21,4 +21,4 @@ alias crc1='crc_ssh username@crcfe01.crc.nd.edu'
 alias crc2='crc_ssh username@crcfe02.crc.nd.edu'
 
 # Notre Dame CRC SCP aliases
-#alias crc1_cp='~/.config/rice_scripts/sshpass_scp.sh ~/.ssh/password_keys/nd_crc user@crcfe01.crc.nd.edu'
+#alias crc1_cp='~/.config/rice/scripts/sshpass_scp.sh ~/.ssh/password_keys/nd_crc user@crcfe01.crc.nd.edu'
