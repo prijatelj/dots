@@ -1,36 +1,40 @@
 ! special
-#define FOREGROUND   #c5c8c6
-#define BACKGROUND   #1d1f21
-#define CURSORCOLOR  FOREGROUND 
+#define FOREGROUND   #e0e3e1
+#define BACKGROUND   #000000
+#define CURSORCOLOR  FOREGROUND
 
 ! black
-#define COLOR0       #BACKGROUND
-#define COLOR8       #373b41
+#define COLOR0       #292b30
+#define COLOR8       #474d54
 
 ! red
-#define COLOR1       #a54242
-#define COLOR9       #cc6666
+#define COLOR1       #ad3f3f
+#define COLOR9       #ff7777
 
 ! green
-#define COLOR2       #8c9440
-#define COLOR10      #b5bd68
+#define COLOR2       #444c10
+!#define COLOR2       #495211
+!#define COLOR2       #89944a
+#define COLOR10      #f4ff8c
 
 ! yellow
-#define COLOR3       #de935f
-#define COLOR11      #f0c674
+#define COLOR3       #de8242
+#define COLOR11      #ffd27b
 
 ! blue
-#define COLOR4       #1c263a
-#define COLOR12      #81a2be
+#define COLOR4       #3f739d
+#define COLOR12      #9dd1ff
 
 ! magenta
-#define COLOR5       #85678f
-#define COLOR13      #b294bb
+#define COLOR5       #7f4f8f
+#define COLOR13      #eba8ff
 
 ! cyan
-#define COLOR6       #2a4f54
-#define COLOR14      #8abeb7
+#define COLOR6       #00ECCD
+!#define COLOR6       #4ccdbc
+!#define COLOR6       #3f8d82
+#define COLOR14      #b9fff6
 
 ! white
 #define COLOR7       #707880
-#define COLOR15      FOREGROUND
+#define COLOR15      #fbfffc
