@@ -136,9 +136,9 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 # TODO exit i3 (logs you out of your X session) and restores your workspace setup upon next login
-#bindsym $mod+Shift+e exec ~/.config/i3/exit_menu.sh 
+#bindsym $mod+Shift+e exec ~/.config/rice/i3/exit_menu.sh 
 # exit i3 (logs you out of your X session) and does NOT perserve the workspace on
-bindsym $mod+Shift+Ctrl+e exec ~/.config/i3/exit_menu.sh 
+bindsym $mod+Shift+Ctrl+e exec ~/.config/rice/i3/exit_menu.sh 
 
 
 # resize window (you can also use the mouse for that)
@@ -194,6 +194,9 @@ mode "$mode_system" {
 bindsym $mod+Pause mode "$mode_system"
 
 # assign workspace 1 to primary output display
+# Myth:
+#workspace 1 output DP-2
+# CVRL workstation:
 workspace 1 output DPY-2
 
 # Audio controls for ALSA, use comma (decrease) and period (incease) small,
