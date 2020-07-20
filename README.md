@@ -1,6 +1,7 @@
-# Dot Files Arch linux dot files for custom configuration and ricing.
+## Dots
+Arch linux dot files for custom configuration and ricing.
 
-## TODO
+### TODO
 - Get zsh
     + replace all bash things with zsh things while ensuring able to use bash.
     + zsh meant for interacting in terminal.
