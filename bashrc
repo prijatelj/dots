@@ -15,7 +15,7 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\][\u\033[01;31m\]@\033[01;3
 PATH="$PATH:~/.local/bin"
 
 # Set alias for generating a random password
-alias rand_pass='~/.config/rice/scripts/random_password.sh'
+alias randpass='~/.config/rice/scripts/randpass.sh'
 
 # Set alias for viewing tabular files with comma, tabs, or other delimiters
 alias csvread='~/.config/rice/scripts/csvread.sh'
