@@ -3,7 +3,7 @@
 
 # Check number args
 if [[ "$#" -gt 3 ]]; then
-    echo "Expected cols file/path [-s delimiter]"
+    echo "Expected csvread file/path [-s delimiter]"
     exit 1
 fi
 
@@ -19,11 +19,12 @@ if [[ "$#" -eq 1 ]]; then
     column -ts, < $1 | less -#2 -N -S
 elif [[ "$2" -eq "-t" ]]; then
     # delimiter is tab
+    # TODO this . . . doesn't seem to work, but it handles tabs anyways?
     column -ts $'\t' < $1 | less -#2 -N -S
 elif [[ "$2" -eq "-s" ]]; then
     # Given delimiter
     column -ts $3 < $1 | less -#2 -N -S
 else
-    echo "Expected cols file/path [-s delimiter]"
+    echo "Expected csvread file/path [-s delimiter]"
     exit 1
 fi

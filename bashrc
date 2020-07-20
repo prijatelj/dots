@@ -18,7 +18,7 @@ PATH="$PATH:~/.local/bin"
 alias rand_pass='~/.config/rice/scripts/random_password.sh'
 
 # Set alias for viewing tabular files with comma, tabs, or other delimiters
-alias col_show='~/.config/rice/scripts/cols.sh'
+alias csvread='~/.config/rice/scripts/csvread.sh'
 
 # Notre Dame CRC ssh and scp alias examples that use a stored password.
 # Highly recommended to have this password be unique to CRC and strong.
