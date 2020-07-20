@@ -36,7 +36,7 @@ xrandr --output DP-2 --auto --output DVI-I-1 --auto --right-of DP-2
 picom -CGb --config $HOME/.config/rice/picom.conf
 ~/.config/rice/fehbg.sh &
 unclutter --timeout 2 &
-i3
+i3 -c ~/.config/rice/i3/config
 
 # Set initial volume via ALSA or Pulse Audio
 #amixer -q sset Master,0 20
