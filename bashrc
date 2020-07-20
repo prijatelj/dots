@@ -14,6 +14,12 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\][\u\033[01;31m\]@\033[01;3
 # add .local/bin for ipython and possibly any others.
 PATH="$PATH:~/.local/bin"
 
+# Set alias for generating a random password
+alias rand_pass='~/.config/rice/scripts/random_password.sh'
+
+# Set alias for viewing tabular files with comma, tabs, or other delimiters
+alias cols='~/.config/rice/scripts/cols.sh'
+
 # Notre Dame CRC ssh and scp alias examples that use a stored password.
 # Highly recommended to have this password be unique to CRC and strong.
 # Notre Dame CRC SSH aliases
@@ -26,9 +32,3 @@ alias crc2='crc_ssh username@crcfe02.crc.nd.edu'
 
 # Set manpath variable to include local man pages
 #export MANPATH="$(manpath):$HOME/.local/share/man/"
-
-# Set alias for generating a random password
-alias rand_pass='~/.config/rice/scripts/random_password.sh'
-
-# Set alias for viewing tabular files with comma, tabs, or other delimiters
-alias cols='~/.config/rice/scripts/cols.sh'
