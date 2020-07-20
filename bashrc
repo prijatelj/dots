@@ -26,3 +26,9 @@ alias crc2='crc_ssh username@crcfe02.crc.nd.edu'
 
 # Set manpath variable to include local man pages
 #export MANPATH="$(manpath):$HOME/.local/share/man/"
+
+# Set alias for generating a random password
+alias rand_pass='~/.config/rice/scripts/random_password.sh'
+
+# Set alias for viewing tabular files with comma, tabs, or other delimiters
+alias cols='~/.config/rice/scripts/cols.sh'
