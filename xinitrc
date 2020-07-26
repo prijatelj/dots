@@ -17,9 +17,9 @@ fi
 
 if [ -f "$userresources" ]; then
     xrdb \
-        -DCOLOR_SCHEME="<$HOME/.config/rice/Xresources.d/color_scheme>" \
-        -DFONTS="<$HOME/.config/rice/Xresources.d/fonts>" \
-        -DURXVT="<$HOME/.config/rice/Xresources.d/urxvt>" \
+        -DCOLOR_SCHEME="<$userresources.d/myth>" \
+        -DFONTS="<$userresources.d/fonts>" \
+        -DURXVT="<$userresources.d/urxvt>" \
         -merge "$userresources"
 fi
 
