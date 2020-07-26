@@ -16,7 +16,11 @@ if [ -f $sysmodmap ]; then
 fi
 
 if [ -f "$userresources" ]; then
-    xrdb -merge "$userresources"
+    xrdb \
+        -DCOLOR_SCHEME="<$HOME/.config/rice/Xresources.d/color_scheme>" \
+        -DFONTS="<$HOME/.config/rice/Xresources.d/fonts>" \
+        -DURXVT="<$HOME/.config/rice/Xresources.d/urxvt>" \
+        -merge "$userresources"
 fi
 
 if [ -f "$usermodmap" ]; then
@@ -34,9 +38,9 @@ fi
 
 xrandr --output DP-2 --auto --output DVI-I-1 --auto --right-of DP-2
 picom -CGb --config $HOME/.config/rice/picom.conf
-~/.config/rice/fehbg.sh &
+$HOME/.config/rice/fehbg.sh &
 unclutter --timeout 2 &
-i3 -c ~/.config/rice/i3/config
+i3 -c $HOME/.config/rice/i3/config
 
 # Set initial volume via ALSA or Pulse Audio
 #amixer -q sset Master,0 20

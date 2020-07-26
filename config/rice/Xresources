@@ -1,7 +1,7 @@
 ! Load the theme variables
-#include "~/.config/rice/Xresources.d/color_scheme"
-#include "~/.config/rice/Xresources.d/fonts"
+#include COLOR_SCHEME
+#include FONTS
 
 ! For each application
-#include "~/.config/rice/Xresources.d/urxvt"
+#include URXVT
 !#include "~/.config/rice/Xresources.d/rofi"
