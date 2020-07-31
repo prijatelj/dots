@@ -6,6 +6,7 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
+alias lsuc='ls --color=no'
 alias grep='grep --color=auto'
 
 # prettify the console prompt
