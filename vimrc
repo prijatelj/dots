@@ -17,6 +17,19 @@ Plugin 'dense-analysis/ale'
 " Plugin 'junegunn/fzf' " unnecessary on Arch Linx
 Plugin 'junegunn/fzf.vim'
 
+" Editing LaTeX files
+Plugin 'lervag/vimtex'
+
+" Indicate indent level
+"Plugin 'yggdroot/indentline'
+Plugin 'nathanaelkane/vim-indent-guides'
+
+" Ease of alignment of text w/ delimiters, e.g. tables
+Plugin 'junegunn/vim-easy-align'
+
+" Org mode: For ease of writing meeting minutes, and organization
+Plugin 'jceb/vim-orgmode'
+
 call vundle#end() 
 " filetype plugin indent on
 filetype plugin on
@@ -29,6 +42,19 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   'python': ['yapf'],
 \}
+
+" Vimtex settings
+let g:tex_flavor = 'latex'
+
+" Vim-indent-guides settings
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=234
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235
+
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_enable_on_vim_startup = 1
+
 
 " Personal settings
 syntax on
@@ -69,6 +95,7 @@ autocmd BufWritePre *.c,*.cc,*.cpp,*.java,*.php,*.py,*.html,*.css,*.pl,*.js,
 set viminfo='20,<2000
 
 colorscheme zellner
+"set background=dark
 
 " Highlight column 80 and 200
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
