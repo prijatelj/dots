@@ -13,7 +13,7 @@ Arch linux dot files for custom configuration and ricing.
         whitespace, empty lines, and all comments at least. (perhaps this exists)
 - security
     + setup scripts for proper ssh security and optinal remote login
-- scripts / notes for Vim setup
+- Vim: scripts / notes for Vim setup
     + Vundle
     + ALE
         - yapf and pylint and with custom pylint style.
@@ -41,6 +41,12 @@ Arch linux dot files for custom configuration and ricing.
       all occurrence of that string in the file with a new string.  So
       basically, a means to take whatever is selected in selection mode and do
       `%s/string_selected/whatever_replaces_it/g`
+    + Need vim commands that do what yapf does not for python styling:
+        - alphabetize imports, and split into sections:
+            python defaults, 3rd party, this package.
+        - easy correction of long lines starting w/ [, (, or { such that every
+            entry is on its own line, indented once more than original line and
+            the closing bracket is dedented.
 - i3
     + Smaller increment adjustment for resizing containers.
     + set login default volume
