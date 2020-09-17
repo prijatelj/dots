@@ -1,4 +1,4 @@
-[yapf]
+[comments]
 
 # Needs to support correcting over-indentation,
 # needs to support correcting style that is not over the line width
@@ -8,16 +8,20 @@
 
 # TODO sort and organize the imports by: python built in, 3rd party, and this
 #   package where each section is alphabetized.
+continuation_indent_width = 4
+
 
 [style]
 based_on_style = google
+indent_width = 4
 coalesce_brackets = true
-continuation_align_style = fixed
+continuation_align_style = FIXED
 dedent_closing_brackets = true
-indent_dictionary_value = false
-split_before_expression_after_opening_paren = false
+indent_dictionary_value = true
+split_before_expression_after_opening_paren = true
 split_before_first_argument = true
 spaces_around_subscript_colon = true
 split_before_bitwise_operator = true
 split_before_logical_operator = true
-split_before_dict_set_generator = false
+split_before_dict_set_generator = true
+split_penalty_after_opening_bracket = 0
