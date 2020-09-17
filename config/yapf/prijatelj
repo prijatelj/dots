@@ -1,0 +1,23 @@
+[yapf]
+
+# Needs to support correcting over-indentation,
+# needs to support correcting style that is not over the line width
+#   e.g. if an expression starting w/ (, [, or { is split at all, then all
+#   entries need to be on their own line and indented in 4 spaces from parent
+#   or beginning line containing the beginning of the expression.
+
+# TODO sort and organize the imports by: python built in, 3rd party, and this
+#   package where each section is alphabetized.
+
+[style]
+based_on_style = google
+coalesce_brackets = true
+continuation_align_style = fixed
+dedent_closing_brackets = true
+indent_dictionary_value = false
+split_before_expression_after_opening_paren = false
+split_before_first_argument = true
+spaces_around_subscript_colon = true
+split_before_bitwise_operator = true
+split_before_logical_operator = true
+split_before_dict_set_generator = false
