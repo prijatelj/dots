@@ -56,9 +56,15 @@ Rxvt.color7:       COLOR8
 Rxvt.color15:      COLOR15
 
 ! Fonts
-URxvt*font: xft:FONT:medium:size=FONT_SIZE
-URxvt*boldFont: xft:FONT:size=FONT_SIZE
-URxvt*italicFont: xft:FONT:italic:size=FONT_SIZE
+URxvt*font: xft:FONT:medium:style=Regular:size=FONT_SIZE
+URxvt*boldFont: xft:FONT:bold:size=FONT_SIZE
+URxvt*italicFont: xft:FONT:italic::size=FONT_SIZE
 URxvt*boldItalicFont: xft:FONT:bold:italic:size=FONT_SIZE
 !URxvt*internalBorder padding
 !URxvtt.letterSpace: LETTER_SPACE
+
+! :Bind C-0, C-+ and C-= to activate small, medium, and big font size resp.
+! This is not akin to zoom in or out, but only 3 sizes, which is all Dina has.
+URxvt.keysym.C-0: command:\033]710;-*-dina-medium-r-normal--13-*-*-*-*-*-*-*\007
+URxvt.keysym.C-minus: command:\033]710;-*-dina-medium-r-normal--15-*-*-*-*-*-*-*\007
+URxvt.keysym.C-equal: command:\033]710;-*-dina-medium-r-normal--16-*-*-*-*-*-*-*\007
