@@ -103,6 +103,7 @@ Arch linux dot files for custom configuration and ricing.
           like on what screen
         - Also for when others need to read something in my terminal, esp. from
           a distance.
+    + Find or create a font that is not a XFT as XFT fonts are slow.
 - tmux
     + Consider using tmux within a single screen as the means of mutliple
       terminals
@@ -111,6 +112,8 @@ Arch linux dot files for custom configuration and ricing.
           as it is in i3.
         - Make the movements between adjacent panes the same as i3
         - ease jumping to panes, if doable (a single hotkey is preferred).
+        - if unable to make a single key that must always be pressed, then make
+          it modal like vim and use one key to toggle it.
 - Mouse Interface
     + make the buttons on the mouse complete various hotkeys
         - i3 navigation hotkeys?
