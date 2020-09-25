@@ -24,7 +24,7 @@ alias csvread='~/.config/rice/scripts/csvread.sh'
 # Notre Dame CRC ssh and scp alias examples that use a stored password.
 # Highly recommended to have this password be unique to CRC and strong.
 # Notre Dame CRC SSH aliases
-alias crc_ssh='sshpass -f .ssh/password_keys/nd_crc ssh'
+alias crc_ssh='sshpass -f ~/.ssh/password_keys/nd_crc ssh'
 alias crc1='crc_ssh username@crcfe01.crc.nd.edu'
 alias crc2='crc_ssh username@crcfe02.crc.nd.edu'
 
