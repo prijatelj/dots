@@ -95,6 +95,7 @@ autocmd BufWritePre *.c,*.cc,*.cpp,*.java,*.php,*.py,*.html,*.css,*.pl,*.js,
 set viminfo='20,<2000
 
 colorscheme zellner
+" colorscheme slate
 "set background=dark
 
 " Highlight column 80 and 200
