@@ -1,6 +1,4 @@
 #define FONT Dina 
 #define FONT_SIZE 8
-!#define FONT_PAD 20
-!#define LETTER_SPACE -1
 
 ! Stay aware of fonts: Terminus, Tamsyn, ProggyClean, MonteCarlo, Fira Mono/Code
