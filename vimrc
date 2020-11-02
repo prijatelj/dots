@@ -42,6 +42,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   'python': ['yapf'],
 \}
+" \   'python': ['yapf', 'isort'],
 
 " Vimtex settings
 let g:tex_flavor = 'latex'
