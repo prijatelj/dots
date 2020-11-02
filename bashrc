@@ -10,7 +10,13 @@ alias lsuc='ls --color=no'
 alias grep='grep --color=auto'
 
 # prettify the console prompt
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\][\u\033[01;31m\]@\033[01;35m\]\h]\[\033[00m\]: \[\033[01;34m\]\w\[\033[00m\]\033[01;32m\] $git_branch\033[01;35m\]$git_dirty\n\$\[\033[00m\] '
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    # If remote ssh session use a different color scheme
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]{\u\033[01;35m\]@\033[01;33m\]\h}\[\033[00m\]: \[\033[01;34m\]\w\[\033[00m\]\033[01;32m\] $git_branch\033[01;35m\]$git_dirty\n\$\[\033[00m\] '
+else
+    # Default colorscheme
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\][\u\033[01;31m\]@\033[01;35m\]\h]\[\033[00m\]: \[\033[01;34m\]\w\[\033[00m\]\033[01;32m\] $git_branch\033[01;35m\]$git_dirty\n\$\[\033[00m\] '
+fi
 
 # add .local/bin for ipython and possibly any others.
 PATH="$PATH:~/.local/bin"
