@@ -95,8 +95,12 @@ autocmd BufWritePre *.c,*.cc,*.cpp,*.java,*.php,*.py,*.html,*.css,*.pl,*.js,
 " Setting vim buffer size to 2000 lines max.
 set viminfo='20,<2000
 
-colorscheme zellner
-" colorscheme slate
+" Set the colorscheme based on being local or remote.
+if ( "$SSH_CLIENT" != "" && "$SSH_TTY" != "" )
+    colorscheme slate
+else
+    colorscheme zellner
+endif
 "set background=dark
 
 " Highlight column 80 and 200
