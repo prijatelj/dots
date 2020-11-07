@@ -96,7 +96,7 @@ autocmd BufWritePre *.c,*.cc,*.cpp,*.java,*.php,*.py,*.html,*.css,*.pl,*.js,
 set viminfo='20,<2000
 
 " Set the colorscheme based on being local or remote.
-if ( "$SSH_CLIENT" != "" && "$SSH_TTY" != "" )
+if ( $SSH_CLIENT != "" && $SSH_TTY != "" )
     colorscheme slate
 else
     colorscheme zellner
