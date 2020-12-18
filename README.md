@@ -4,7 +4,10 @@ Arch linux dot files for custom configuration and ricing.
 
 ### Install
 
-To install, simply use `git clone <repo> ~`.
+To install, simply use:
+
+```git clone <repo> ~```
+
 Be sure there are no existing files that overlap with those in the repo, otherwise ensure you have backups of the files before cloning.
 
 ### TODO
