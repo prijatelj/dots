@@ -16,7 +16,7 @@
 !.config/rice
 
 # Dots repo files that are either notes or manual configurations
-!dots/
+!dots
 
 # Mozilla (.mozilla/firefox) is a special case...
 !.mozilla/firefox/*userChrome.css
