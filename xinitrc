@@ -17,8 +17,7 @@ fi
 
 if [ -f "$userresources" ]; then
     xrdb \
-        -DCOLOR_SCHEME="<$userresources.d/myth>" \
-        -DFONTS="<$userresources.d/fonts>" \
+        -DTHEME="<$userresources.d/myth>" \
         -DURXVT="<$userresources.d/urxvt>" \
         -merge "$userresources"
 fi
