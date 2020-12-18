@@ -1,7 +1,5 @@
 ! Load the theme variables
-#include COLOR_SCHEME
-#include FONTS
+#include THEME
 
 ! For each application
 #include URXVT
-!#include "~/.config/rice/Xresources.d/rofi"

@@ -1,6 +1,0 @@
-#define FONT Dina 
-#define FONT_SIZE 10
-
-! Stay aware of fonts: Terminus, Tamsyn, ProggyClean, MonteCarlo, Fira Mono/Code
-!#define FONT Tamsyn 
-!#define FONT Terminus 

@@ -1,0 +1,19 @@
+# Ignore all
+*
+
+# Whitelist top-level of repo/home
+!.gitignore
+!.bash_profile
+!.bashrc
+!.config
+!.tmux.conf
+!.vimrc
+!.xinitrc
+!.xserverrc
+!README.md
+
+# Dots repo files that are either notes or manual configurations
+!dots/
+
+# Mozilla (.mozilla/firefox) is a special case...
+!.mozilla/firefox/*userChrome.css
