@@ -5,12 +5,15 @@
 !.gitignore
 !.bash_profile
 !.bashrc
-!.config
 !.tmux.conf
 !.vimrc
 !.xinitrc
 !.xserverrc
 !README.md
+
+# Handle config:
+!.config
+!.config/rice
 
 # Dots repo files that are either notes or manual configurations
 !dots/
