@@ -1,7 +1,14 @@
 ## Dots
+
 Arch linux dot files for custom configuration and ricing.
 
+### Install
+
+To install, simply use `git clone <repo> ~`.
+Be sure there are no existing files that overlap with those in the repo, otherwise ensure you have backups of the files before cloning.
+
 ### TODO
+
 - Get zsh
     + replace all bash things with zsh things while ensuring able to use bash.
     + zsh meant for interacting in terminal.
