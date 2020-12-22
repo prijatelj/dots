@@ -13,7 +13,12 @@
 
 # Handle config:
 !.config
+!.config/yapf/*
+!.config/gtk-3.0/*
 !.config/rice
+!.config/rice
+!.config/rice/*
+!.config/rice/*/*
 
 # Dots repo files that are either notes or manual configurations
 !dots
