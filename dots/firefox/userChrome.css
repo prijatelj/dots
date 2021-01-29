@@ -19,53 +19,87 @@
 /* can we hide the scroll bar when not scrolling? if so can we make it transparent as well? */
 
 /* Remove the back button */
-/*
 #back-button { display: none !important; }
-*/
 
 /* Remove the forward button */
-/*
 #forward-button { display: none !important; }
-*/
 
-/* Hides Net Tab Button */
-/*
-#new-tab-button, .tabs-newtab-button {
+/* Hides New Tab Button */
+/* Doesn't seem to do anythin.
+#new-tab-button .tab-close-button{
   display: none !important;
   transform: scale(1, 1.9) !important;
+  visibility: collapse !important;
 }
 */
 
-/* change bookmark toolbar menu size */
-/*
+/* Change bookmark toolbar menu size */
 menuitem, menu {
   padding: 0 !important;
-  font-size: 12px !important;
-}
-.menu-iconic-left {
-   transform: scale(0.8) !important;
-}
-*/
-/* Shrinks Tab bar height */
-/*
-#TabsToolbar, .tabbrowser-tab {
-  max-height: 20px !important;
-}
-*/
-/* Cheating way of losing the bottom excess of navbar */
-/*
-#nav-bar {
-  max-height: 23px !important;
   font-size: 10px !important;
-  margin-top: -10px !important;
 }
-*/
+/* Shrinks icons to left in bookmark bar, more hamburger, etc.*/
+.menu-iconic-left, .tab-icon-image, #PanelUI-menu-button,
+#nav-bar-overflow-button, #personal-bookmarks .toolbarbutton-icon{
+  transform: scale(0.8) !important;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+/* Shrinks Tab bar height */
+#TabsToolbar, .tabbrowser-tab, toolbar {
+  max-height: 20px !important;
+  font-size: 9px !important;
+  padding: 0 !important;
+}
+/*** Shrink Tab Close buttons ***/
+.tabbrowser-tab .tab-close-button {
+  transform: scale(0.8) !important;
+}
+
+
+/* Cheating way of losing the bottom excess of navbar */
+#nav-bar {
+  padding: 0 !important;
+  max-height: 23px !important;
+  font-size: 9px !important;
+  margin-top: 0px !important;
+}
 
 /* removes margins around url/search bar */
 #urlbar, .searchbar-textbox{
   font-size: 10px !important;
-  margin: 0 !important;
   max-height: 0px !important;
+  margin: 0px !important;
+  padding: 0px!important;
+
+  border-style: solid !important;
+  border-width: 1px !important;
+  border-color: rgba(20, 20, 20, 1.0) !important;
+}
+
+/*URL dropdown bar blur*/
+.urlbarView {
+    background-image: url(image/noise-512x512.png) !important;
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(32px) !important;
+}
+#urlbar-background {
+    display: none !important;
+}
+
+/*Transform URL container icons*/
+*#urlbar-input-container > box,
+#page-action-buttons{
+  transform: scale(0.9) !important;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+/* Set URL background color*/
+#urlbar .urlbar-input-box {
+    margin: 0px !important;
+    padding-left: 3px !important;
+    background-color: rgba(0, 0, 0, 1.0) !important;
 }
 
 
@@ -75,6 +109,7 @@ menuitem, menu {
   -moz-appearance: initial !important;
 }
 */
+
 /* Remove empty space before first tab
 Delete this rule if you need a space to drag the window*/
 /*
