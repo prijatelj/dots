@@ -3,9 +3,14 @@
 
 /* Removing the scroll bar from firefox windows */
 :-moz-any(#content,#appcontent) browser{
+    /* NOTE the margine removal is permanent, even when no scroll bar.
+     * Uncertain of workaround.
+     */
     margin-right:-14px!important;
     overflow-y:scroll;
+    /* removed because the bottom scroll bar is much rarer.
     margin-bottom:-14px!important;
+    */
     overflow-x:scroll;
 }
 
