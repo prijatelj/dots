@@ -6,7 +6,12 @@
     /* NOTE the margine removal is permanent, even when no scroll bar.
      * Uncertain of workaround.
      */
-    margin-right:-14px!important;
+    margin-right:-14px !important;
+    /* TODO try visibility: collapse !important; to only hide the bar.
+     * Currently, the -14 margin affects other things in content body, such as
+     * the find interface, which I also would like to shrink.
+     */
+
     overflow-y:scroll;
     /* removed because the bottom scroll bar is much rarer.
     margin-bottom:-14px!important;
