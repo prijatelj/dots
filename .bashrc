@@ -34,6 +34,8 @@ alias crc_ssh='sshpass -f ~/.ssh/password_keys/nd_crc ssh'
 alias crc1='crc_ssh username@crcfe01.crc.nd.edu'
 alias crc2='crc_ssh username@crcfe02.crc.nd.edu'
 
+alias nd_vpn='openconnect-sso -s vpnaccess.nd.edu/nosplit'
+
 # Notre Dame CRC SCP aliases
 #alias crc1_cp='~/.config/rice/scripts/sshpass_scp.sh ~/.ssh/password_keys/nd_crc user@crcfe01.crc.nd.edu'
 
