@@ -27,6 +27,9 @@ alias randpass='~/.config/rice/scripts/randpass.sh'
 # Set alias for viewing tabular files with comma, tabs, or other delimiters
 alias csvread='~/.config/rice/scripts/csvread.sh'
 
+# Set alias for creating another terminal at current working directory
+alias xorg_cwd='~/.config/rice/scripts/xorg_cwd.sh'
+
 # Notre Dame CRC ssh and scp alias examples that use a stored password.
 # Highly recommended to have this password be unique to CRC and strong.
 # Notre Dame CRC SSH aliases
