@@ -12,6 +12,7 @@ PSTREE=$(pstree -p $WIN_PID)
 
 # Check if the focused window contains urxvt running bash
 if [[ $PSTREE =~ "urxvt($WIN_PID)---bash(" ]]; then
+    # TODO consider ability to get PID of the bash session in vim.
     BASH_PID=$(echo $PSTREE | grep -oE "urxvt\($WIN_PID\)---bash\([0-9]*" | grep -oE "bash\(.*")
     BASH_PID=${BASH_PID:5}
 
