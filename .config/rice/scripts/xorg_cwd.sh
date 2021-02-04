@@ -16,16 +16,14 @@ if [[ $PSTREE =~ "urxvt($WIN_PID)---bash(" ]]; then
     BASH_PID=${BASH_PID:5}
 
     if [ -e "/proc/$BASH_PID/cwd" ]; then
-        echo "copied cwd"
+        echo "Successfully copied cwd."
         urxvt -cd $(readlink "/proc/$BASH_PID/cwd") &
     else
-        echo "Error: cwd does not exist. PID = $BASH_PID"
-        echo "Error: WIN_PID = $WIN_PID"
+        echo "Error: cwd does not exist. WIN_PID = $WINPID. BASH PID = $BASH_PID"
         urxvt &
     fi
 else
-    echo "Error: Focused window was not a terminal."
-    echo $PSTREE
+    echo "Error: Focused window was not a terminal. WIN_PID = $WINPID."
     urxvt &
 fi
 
