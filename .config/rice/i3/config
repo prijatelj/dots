@@ -31,6 +31,8 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+# start a terminal at current working directory
+bindsym $mod+Shift+Return exec ~/.config/rice/scripts/xorg_cwd.sh
 
 # kill focused window
 bindsym $mod+Shift+q kill
