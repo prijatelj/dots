@@ -1,17 +1,12 @@
 /* userChrome.css is for modifying user specific Firefox css */
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* Removing the scroll bar from firefox windows */
 :-moz-any(#content,#appcontent) browser{
     /* NOTE the margine removal is permanent, even when no scroll bar.
      * Uncertain of workaround.
      */
-    margin-right:-14px !important;
-    /* TODO try visibility: collapse !important; to only hide the bar.
-     * Currently, the -14 margin affects other things in content body, such as
-     * the find interface, which I also would like to shrink.
-     */
-
+    margin-right:-14px!important;
     overflow-y:scroll;
     /* removed because the bottom scroll bar is much rarer.
     margin-bottom:-14px!important;
@@ -19,15 +14,25 @@
     overflow-x:scroll;
 }
 
-/* can we universally change all scroll bars to be Dark, rather than white and light gray? */
+/* can we universally change all scroll bars to be Dark, rather than white and
+ * light gray? */
 
-/* can we hide the scroll bar when not scrolling? if so can we make it transparent as well? */
+/* can we hide the scroll bar when not scrolling? if so can we make it
+ * transparent as well? */
 
-/* Remove the back button */
-#back-button { display: none !important; }
+/* Removes the forward and back button */
+#forward-button, #back-button, #PlacesChevron, #PanelUI-menu-button {
+  /*display: none !important; */
+  transform: scale(0.8) !important;
+  padding: 0px !important;
+  margin: -6px -5px 0px -5px !important;
+}
+#nav-bar-overflow-button {
+  transform: scale(0.8) !important;
+  padding: 0px !important;
+  margin: -6px -5px 0px -12px !important;
+}
 
-/* Remove the forward button */
-#forward-button { display: none !important; }
 
 /* Hides New Tab Button */
 /* Doesn't seem to do anythin.
@@ -41,14 +46,23 @@
 /* Change bookmark toolbar menu size */
 menuitem, menu {
   padding: 0 !important;
+  margin: 0 !important;
   font-size: 10px !important;
 }
 /* Shrinks icons to left in bookmark bar, more hamburger, etc.*/
-.menu-iconic-left, .tab-icon-image, #PanelUI-menu-button,
-#nav-bar-overflow-button, #personal-bookmarks .toolbarbutton-icon{
+.menu-iconic-left, .tab-icon-image {
   transform: scale(0.8) !important;
   padding: 0px !important;
-  margin: 0px !important;
+  margin: 0px 0px 0px -5px !important;
+}
+#personal-bookmarks {
+  padding: 0px !important;
+  margin: -6px 0px 0px 0px !important;
+}
+#personal-bookmarks .toolbarbutton-icon{
+  transform: scale(0.8) !important;
+  padding: 0px !important;
+  margin: 0px 0px 0px -7px !important;
 }
 
 /* Shrinks Tab bar height */
@@ -56,6 +70,7 @@ menuitem, menu {
   max-height: 20px !important;
   font-size: 9px !important;
   padding: 0 !important;
+  margin: 0px 0px 0px -3px !important;
 }
 /*** Shrink Tab Close buttons ***/
 .tabbrowser-tab .tab-close-button {
@@ -66,9 +81,9 @@ menuitem, menu {
 /* Cheating way of losing the bottom excess of navbar */
 #nav-bar {
   padding: 0 !important;
+  margin: 0px !important;
   max-height: 23px !important;
   font-size: 9px !important;
-  margin-top: 0px !important;
 }
 
 /* removes margins around url/search bar */
@@ -85,7 +100,7 @@ menuitem, menu {
 
 /*URL dropdown bar blur*/
 .urlbarView {
-    background-image: url(image/noise-512x512.png) !important;
+    /*background-image: url(image/noise-512x512.png) !important;*/
     background-color: rgba(0, 0, 0, 0.8) !important;
     backdrop-filter: blur(32px) !important;
 }
@@ -105,6 +120,34 @@ menuitem, menu {
     margin: 0px !important;
     padding-left: 3px !important;
     background-color: rgba(0, 0, 0, 1.0) !important;
+}
+
+/* --- Reduce row paddings to make them more compact */
+.urlbarView-row {
+    padding: 2px !important;
+    line-height: 1.20em !important;
+}
+.urlbarView-row-inner {
+    padding-bottom: 8px !important;
+}
+.urlbarView {
+    margin: 0px !important;
+    width: 100% !important;
+}
+
+/* Disable Urlbar Animation */
+#urlbar[breakout][breakout-extend][breakout-extend-animate] > #urlbar-background {
+    animation-name: none !important;
+    animation: none !important;
+}
+
+/* --- More compact "Search with Google" rows */
+.urlbarView-row[dynamicType="onboardTabToSearch"] > .urlbarView-row-inner {
+    min-height: auto !important;
+    width: auto !important;
+}
+.urlbarView-row[dynamicType="onboardTabToSearch"] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-favicon {
+    margin-bottom: -1px;
 }
 
 
