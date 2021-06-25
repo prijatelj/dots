@@ -131,13 +131,51 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+## Another set of numbered workspaces
+set $wsC1 "C1"
+set $wsC2 "C2"
+set $wsC3 "C3"
+set $wsC4 "C4"
+set $wsC5 "C5"
+set $wsC6 "C6"
+set $wsC7 "C7"
+set $wsC8 "C8"
+set $wsC9 "C9"
+set $wsC10 "C10"
+
+## switch to workspace
+bindsym $mod+Ctrl+1 workspace $wsC1
+bindsym $mod+Ctrl+2 workspace $wsC2
+bindsym $mod+Ctrl+3 workspace $wsC3
+bindsym $mod+Ctrl+4 workspace $wsC4
+bindsym $mod+Ctrl+5 workspace $wsC5
+bindsym $mod+Ctrl+6 workspace $wsC6
+bindsym $mod+Ctrl+7 workspace $wsC7
+bindsym $mod+Ctrl+8 workspace $wsC8
+bindsym $mod+Ctrl+9 workspace $wsC9
+bindsym $mod+Ctrl+0 workspace $wsC10
+
+## move focused container to workspace
+bindsym $mod+Shift+Ctrl+1 move container to workspace $wsC1
+bindsym $mod+Shift+Ctrl+2 move container to workspace $wsC2
+bindsym $mod+Shift+Ctrl+3 move container to workspace $wsC3
+bindsym $mod+Shift+Ctrl+4 move container to workspace $wsC4
+bindsym $mod+Shift+Ctrl+5 move container to workspace $wsC5
+bindsym $mod+Shift+Ctrl+6 move container to workspace $wsC6
+bindsym $mod+Shift+Ctrl+7 move container to workspace $wsC7
+bindsym $mod+Shift+Ctrl+8 move container to workspace $wsC8
+bindsym $mod+Shift+Ctrl+9 move container to workspace $wsC9
+bindsym $mod+Shift+Ctrl+0 move container to workspace $wsC10
+
+## TODO add easily named new workspace and access and moving of named workspace
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-# TODO exit i3 (logs you out of your X session) and restores your workspace setup upon next login
+## TODO exit i3 (logs you out of your X session) and restores your workspace setup upon next login
 #bindsym $mod+Shift+e exec ~/.config/rice/i3/exit_menu.sh 
 # exit i3 (logs you out of your X session) and does NOT perserve the workspace on
 bindsym $mod+Shift+Ctrl+e exec ~/.config/rice/i3/exit_menu.sh 
