@@ -9,6 +9,8 @@
 
 ## TODO make sure you do a check of FOSS code for this, it may already exist...
 ## it should, tbh
+## e.g. https://github.com/klaxalk/i3-layout-manager
+## Need to test this and see if it is all I need.
 
 
 # Open firefox in one tmp workspace
