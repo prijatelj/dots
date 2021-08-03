@@ -237,6 +237,7 @@ bindsym $mod+Pause mode "$mode_system"
 # Myth:
 #workspace 1 output DP-2
 # CVRL workstation:
+# TODO make this an X-Resource specified thing, along w/ other monitor ids.
 workspace 1 output DPY-2
 
 # Audio controls for ALSA, use comma (decrease) and period (incease) small,
