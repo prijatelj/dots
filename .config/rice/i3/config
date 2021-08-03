@@ -261,6 +261,9 @@ workspace 1 output DPY-2
 # ??? Do not know how to do this atm with amixer
 
 # pulseaudio equivallent.
+# Set the sink controlled by the keyboard
+# TODO set $sink "1" probably make this an Xresource variable $PACTL_SINK
+
 # Up/Down 1%
 bindsym $mod+period exec "pactl set-sink-volume 0 +1%"
 bindsym $mod+comma exec "pactl set-sink-volume 0 -1%"
