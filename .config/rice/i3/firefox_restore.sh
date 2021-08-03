@@ -11,8 +11,8 @@
 ## it should, tbh
 
 
-# TODO Open firefox in one workspace
-firefox
+# Open firefox in one tmp workspace
+i3-msg 'workspace tmp_firefox; exec /usr/bin/firefox'
 
 # TODO If there is a prior firefox workspace setup and firefox reopened the
 # windows that corresponded to that prior setup, then moves those firefox
