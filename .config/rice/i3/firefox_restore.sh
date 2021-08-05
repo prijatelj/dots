@@ -16,8 +16,6 @@ FIREFOX_LAYOUT_PREFIX="$HOME/.config/rice/i3/firefox_layouts/workspace"
 ## Need to test this and see if it is all I need.
 
 
-# Open firefox in one tmp workspace that restores the last session
-i3-msg 'workspace tmp_firefox; exec /usr/bin/firefox'
 
 # If custom swallow keys work, then this loop may be called prior to firefox
 # Restore all prior workspaces
@@ -34,7 +32,12 @@ for filename in "$FIREFOX_LAYOUT_PREFIX"*.json; do
     # TODO put the workspace on the correct monitor!
 done
 
+# Open firefox in one tmp workspace that restores the last session
+i3-msg 'workspace tmp_firefox; exec /usr/bin/firefox'
 
+# Account for visual error by restarting i3 inplace
+sleep 3 # Takes a bit to load firefox and move them appropriately
+i3-msg 'restart'
 
 # TODO If there is a prior firefox workspace setup and firefox reopened the
 # windows that corresponded to that prior setup, then moves those firefox
