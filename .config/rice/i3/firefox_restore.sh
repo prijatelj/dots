@@ -2,6 +2,8 @@
 # after firefox closes or before the system shutsdown/logouts or the xorg
 # session ends, then loads th
 
+# TODO args management, if any
+
 # TODO Load prior workspace setup, use dummy terminal sessions as placeholders
 #   TODO NOTE this should be generalized and a part of another script that is
 #   not firefox specific. We want to be able to reload the prior workspace
