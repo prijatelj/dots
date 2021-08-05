@@ -3,6 +3,7 @@
 # session ends, then loads th
 
 # TODO args management, if any
+FIREFOX_LAYOUT_PREFIX="$HOME/.config/rice/i3/firefox_layouts/workspace"
 
 # TODO Load prior workspace setup, use dummy terminal sessions as placeholders
 #   TODO NOTE this should be generalized and a part of another script that is
@@ -15,8 +16,25 @@
 ## Need to test this and see if it is all I need.
 
 
-# Open firefox in one tmp workspace
+# Open firefox in one tmp workspace that restores the last session
 i3-msg 'workspace tmp_firefox; exec /usr/bin/firefox'
+
+# If custom swallow keys work, then this loop may be called prior to firefox
+# Restore all prior workspaces
+for filename in "$FIREFOX_LAYOUT_PREFIX"*.json; do
+    [ -e "$filename" ] || continue
+    # Restore the layout in the correct workspace on the correct monitor.
+    # Get workspace id and monitor from filename.
+    MONITOR_ID=$(echo $filename | sed -e "s/^.*_md-//" -e "s/\.json//")
+    WORKSPACE_ID=$(echo $MONITOR_ID | sed -e "s/^.*_ws-//")
+    MONITOR_ID=$(echo $MONITOR_ID | sed -e "s/_ws-.*//")
+
+    # For each Firefox window to be in the workspace, move them into layout
+    i3-msg "workspace $WORKSPACE_ID; append_layout $filename"
+    # TODO put the workspace on the correct monitor!
+done
+
+
 
 # TODO If there is a prior firefox workspace setup and firefox reopened the
 # windows that corresponded to that prior setup, then moves those firefox
