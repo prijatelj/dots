@@ -7,6 +7,7 @@
 # TODO Detect Layout change
 # TODO If layout change persists for longer than the given amount time, update
 # saved layouts
+
 FIREFOX_LAYOUT_DIR="$HOME/.config/rice/i3/firefox_layouts/"
 if ! ls "$FIREFOX_LAYOUT_DIR" ; then
     printf "No such file or directory for FIREFOX_LAYOUT_DIR = %s\n" \
@@ -31,8 +32,8 @@ for workspace in $(i3-msg -t get_workspaces | jq -c '.[]'); do
 
     # If no firefox window in this workspace, continue rm unwanted keys & save
     [[ $WS_TREE  =~ '^firefox$' ]] && printf "%s\n" "$WS_TREE" \
-        | jq -s 'map(.swallows[0] |= {class, title})' \
-        > "$FIREFOX_LAYOUT_DIR/layout_md-${output_name[0]}_ws-${output_name[1]}.json"
+        | jq -s 'map(walk(if (type == "object" and .swallows) then .swallows[0] |= {class, title} else . end ))' \
+        > "$FIREFOX_LAYOUT_DIR/layout_out-${output_name[0]}_ws-${output_name[1]}.json"
 done
 
 # rm non-firefox windows: left out due to wanting to preserve original

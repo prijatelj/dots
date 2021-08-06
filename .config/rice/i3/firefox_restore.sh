@@ -3,7 +3,7 @@
 # session ends, then loads th
 
 # TODO args management, if any
-FIREFOX_LAYOUT_PREFIX="$HOME/.config/rice/i3/firefox_layouts/workspace"
+FIREFOX_LAYOUT_DIR="$HOME/.config/rice/i3/firefox_layouts/"
 
 # TODO Load prior workspace setup, use dummy terminal sessions as placeholders
 #   TODO NOTE this should be generalized and a part of another script that is
@@ -19,7 +19,7 @@ FIREFOX_LAYOUT_PREFIX="$HOME/.config/rice/i3/firefox_layouts/workspace"
 
 # If custom swallow keys work, then this loop may be called prior to firefox
 # Restore all prior workspaces
-for filename in "$FIREFOX_LAYOUT_PREFIX"*.json; do
+for filename in "$FIREFOX_LAYOUT_DIR/layout_out-"*.json; do
     [ -e "$filename" ] || continue
     # Restore the layout in the correct workspace on the correct monitor.
     # Get workspace id and monitor from filename.
