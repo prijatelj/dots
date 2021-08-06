@@ -15,25 +15,38 @@ FIREFOX_LAYOUT_DIR="$HOME/.config/rice/i3/firefox_layouts/"
 ## e.g. https://github.com/klaxalk/i3-layout-manager
 ## Need to test this and see if it is all I need.
 
+# TODO if workspace name already exists, then prepend it with "ff-restore-$ID"
 
+# Get all active monitors and create tmp workspaces on each. Then populate.
+for monitor in $(i3-msg -t get_workspaces | jq -c 'unique_by(.output) | .[]')
+do
+    # Get an array of output id and workspace name id from the monitor json
+    output_name=($(printf "%s\n" $monitor \
+        | jq -r '[.output, .name]' | tr -d '[]," '))
+
+    # If monitor.output has firefox layouts, then populate, ow. continue
+    monitor_ws=($(ls "$FIREFOX_LAYOUT_DIR/layout_out-${output_name[0]}"_ws-*.json))
+    [[ -z $monitor_ws ]] && continue
+
+    # Move to the workspace on the disired monitor
+    i3-msg "workspace ${output_name[1]}"
+
+    for filename in $monitor_ws; do
+        [ -e "$filename" ] || continue
+        # Restore the layout in the correct workspace on the correct monitor.
+        # Get workspace id from filename.
+        WORKSPACE_ID=$(printf "%s\n" $filename | sed -e "s/^.*_ws-//" -e "s/\.json//")
+
+        # For each Firefox window to be in the workspace, move them into layout
+        i3-msg "workspace $WORKSPACE_ID; append_layout $filename"
+    done
+done
 
 # If custom swallow keys work, then this loop may be called prior to firefox
 # Restore all prior workspaces
-for filename in "$FIREFOX_LAYOUT_DIR/layout_out-"*.json; do
-    [ -e "$filename" ] || continue
-    # Restore the layout in the correct workspace on the correct monitor.
-    # Get workspace id and monitor from filename.
-    MONITOR_ID=$(echo $filename | sed -e "s/^.*_md-//" -e "s/\.json//")
-    WORKSPACE_ID=$(echo $MONITOR_ID | sed -e "s/^.*_ws-//")
-    MONITOR_ID=$(echo $MONITOR_ID | sed -e "s/_ws-.*//")
-
-    # For each Firefox window to be in the workspace, move them into layout
-    i3-msg "workspace $WORKSPACE_ID; append_layout $filename"
-    # TODO put the workspace on the correct monitor!
-done
 
 # Open firefox in one tmp workspace that restores the last session
-i3-msg 'workspace tmp_firefox; exec /usr/bin/firefox'
+i3-msg 'workspace tmp_firefox; exec /usr/bin/firefox; workspace $WORKSPACE_ID'
 
 # Account for visual error by restarting i3 inplace
 sleep 3 # Takes a bit to load firefox and move them appropriately
@@ -44,19 +57,6 @@ i3-msg 'restart'
 # windows to their correct workspace and orientation within that workspace.
 #   TODO orientation of windows in a workspace
 #   TODO size of windows in a workspace
-
-# TODO load from some file the workspace setup
-
-# TODO for each open firefox window, match its id to the id in workspace setup
-#  TODO Move that window to its proper place, starting with top level of that
-#  workspace. Code module for one workspace at a time, optionally parallelize.
-
-# TODO Once that level of the workspace is occupied with the correct firefox
-# windows, resize them as appropriate.
-
-# TODO If there is more children in i3wm window tree, continue from top-down
-
-
 
 # TODO upon termination of firefox, either by quitting, logging out, shutting
 # down, power loss, or otherwise ending the current xorg session when firefox
