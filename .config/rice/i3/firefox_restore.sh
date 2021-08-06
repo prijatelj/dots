@@ -28,10 +28,10 @@ do
     monitor_ws=($(ls "$FIREFOX_LAYOUT_DIR/layout_out-${output_name[0]}"_ws-*.json))
     [[ -z $monitor_ws ]] && continue
 
-    # Move to the workspace on the disired monitor
+    # Move to the workspace on the desired monitor
     i3-msg "workspace ${output_name[1]}"
 
-    for filename in $monitor_ws; do
+    for filename in ${monitor_ws[@]}; do
         [ -e "$filename" ] || continue
         # Restore the layout in the correct workspace on the correct monitor.
         # Get workspace id from filename.
@@ -42,15 +42,15 @@ do
     done
 done
 
-# If custom swallow keys work, then this loop may be called prior to firefox
-# Restore all prior workspaces
-
 # Open firefox in one tmp workspace that restores the last session
-i3-msg 'workspace tmp_firefox; exec /usr/bin/firefox; workspace $WORKSPACE_ID'
+i3-msg "workspace tmp_firefox; exec /usr/bin/firefox; workspace $WORKSPACE_ID"
 
-# Account for visual error by restarting i3 inplace
-sleep 3 # Takes a bit to load firefox and move them appropriately
-i3-msg 'restart'
+# TODO Account for visual error by restarting i3 inplace
+#sleep 10 # Takes a bit to load firefox and move them appropriately
+#i3-msg 'restart'
+# NOTE for now, i leave this to user because it can cause some weird failures
+# such as logging me out of my session!
+# TODO consider setting up a restart after firefox's spike in CPU use ends.
 
 # TODO If there is a prior firefox workspace setup and firefox reopened the
 # windows that corresponded to that prior setup, then moves those firefox
