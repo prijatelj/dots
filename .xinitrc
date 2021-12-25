@@ -17,7 +17,7 @@ fi
 
 if [ -f "$userresources" ]; then
     xrdb \
-        -DTHEME="<$userresources.d/myth>" \
+        -DTHEME="<$userresources.d/color_scheme>" \
         -DURXVT="<$userresources.d/urxvt>" \
         -merge "$userresources"
 fi
