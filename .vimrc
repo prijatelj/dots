@@ -30,6 +30,10 @@ Plugin 'junegunn/vim-easy-align'
 " Org mode: For ease of writing meeting minutes, and organization
 Plugin 'jceb/vim-orgmode'
 
+" Python folding and enhanced syntax
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-python/python-syntax'
+
 call vundle#end() 
 " filetype plugin indent on
 filetype plugin on
@@ -56,6 +60,11 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 1
 
+" Vim Python folding
+set nofoldenable
+
+" Vim Python Syntax highlight settings
+let g:python_highlight_all = 1
 
 " Personal settings
 syntax on
