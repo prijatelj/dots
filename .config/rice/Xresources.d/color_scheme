@@ -1,4 +1,3 @@
-!!! Color Scheme
 ! special
 #define FOREGROUND   #e0e3e1
 #define BACKGROUND   #000000
@@ -9,18 +8,20 @@
 #define COLOR8       #474d54
 
 ! red
-#define COLOR1       #ad3f3f
+#define COLOR1       #ec4e4e
+!#define COLOR1       #ad3f3f
 #define COLOR9       #ff7777
 
 ! green
-#define COLOR2       #444c10
+!#define COLOR2       #444c10
 !#define COLOR2       #495211
-!#define COLOR2       #89944a
+#define COLOR2       #89944a
 #define COLOR10      #f4ff8c
 
 ! yellow
 #define COLOR3       #de8242
-#define COLOR11      #ffd27b
+#define COLOR11      #ffc04f
+!#define COLOR11      #ffc451
 
 ! blue
 #define COLOR4       #3f739d
@@ -31,8 +32,8 @@
 #define COLOR13      #eba8ff
 
 ! cyan
-#define COLOR6       #00ECCD
-!#define COLOR6       #4ccdbc
+!#define COLOR6       #00ECCD
+#define COLOR6       #4ccdbc
 !#define COLOR6       #3f8d82
 #define COLOR14      #b9fff6
 
@@ -40,11 +41,11 @@
 #define COLOR7       #707880
 #define COLOR15      #fbfffc
 
-
-!!! Fonts
-#define FONT Dina 
+! fonts
+#define FONT dina 
 #define FONT_SIZE 10
 
-! Stay aware of fonts: Tamsyn, Terminus, ProggyClean, MonteCarlo, Fira Mono/Code
-!#define FONT Tamsyn 
-!#define FONT Terminus 
+! Stay aware of fonts: Tamsyn, Terminus, ProggyClean, MonteCarlo,
+! Fira Mono/Code
+!#define FONT Tamsyn
+!#define FONT Terminus
