@@ -35,11 +35,15 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-xrandr --output DP-2 --auto --output DVI-I-1 --auto --right-of DP-2
+#xrandr --output DP-2 --auto --output DVI-I-1 --auto --right-of DP-2
 picom -CGb --config $HOME/.config/rice/picom.conf
 $HOME/.config/rice/fehbg.sh &
 unclutter --timeout 2 &
-i3 -c $HOME/.config/rice/i3/config
 
-# Set initial volume via ALSA or Pulse Audio
-#amixer -q sset Master,0 20
+# Set the initial screen brightness
+brightnessctl s 1
+
+# Set initial volume via ALSA
+amixer -q sset Master 20% unmute
+
+i3 -c $HOME/.config/rice/i3/config

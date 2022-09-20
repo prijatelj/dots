@@ -1,0 +1,83 @@
+#[icons]
+#icons = "awesome6"
+
+[icons.overrides]
+bat = "| |"
+bat_full = "|X|"
+bat_charging = "|^|"
+bat_discharging = "|v|"
+
+# Internets
+
+[[block]]
+block = "net"
+#command = "echo 'IP ' `curl bot.whatismyipaddress.com`" # assumes fontawesome icons
+#command = "echo '\uf0ac ' `curl bot.whatismyipaddress.com`" # assumes fontawesome icons
+#interval = 60
+
+[[block]]
+block = "custom"
+json = true
+command = ''' echo "{\"icon\":\"ping\",\"text\":\"`ping -c4 1.1.1.1 | tail -n1 | cut -d'/' -f5`\"}" '''
+interval = 60
+
+#[[block.click]]
+#button = "left"
+#cmd = "<command>"
+
+# Weather
+[[block]]
+block = "custom"
+command = "sed 's/  //' <(curl 'https://wttr.in/?format=1' -s)"
+interval = 600
+
+
+# Local
+
+[[block]]
+block = "custom"
+command = '''echo "$(whoami) @ $(cat /etc/hostname)"'''
+interval = "once"
+#icons_format = "{icon}"
+
+
+[[block]]
+block = "custom"
+command = "echo `uname` `uname -r | tr - . | cut -d. -f1-2`"
+interval = "once"
+
+#[[block]]
+#block = "custom"
+#json = true
+#command = """echo '{
+#        \"format\" : \"♪: %volume\",
+#        \"format_muted\" : \"♪: muted (%volume)\",
+#        \"device\" : \"default\",
+#        \"mixer\" : \"Master\",
+#        \"mixer_idx\" : 0
+#}'"""
+
+[[block]]
+block = "battery"
+#icons_format = "{icon}" # Remove spaces aroud icons for this block.
+
+[[block]]
+block = "cpu"
+#icons_format = "{icon}" # Remove spaces aroud icons for this block.
+interval = 1
+
+[[block]]
+block = "memory"
+
+
+[[block]]
+block = "time"
+
+[[block]]
+block = "backlight"
+
+[[block]]
+block = "sound"
+
+#[[block]]
+#block = "bluetooth"
