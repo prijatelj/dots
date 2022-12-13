@@ -56,7 +56,6 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 1
 
-
 " Personal settings
 syntax on
 set number
@@ -65,8 +64,6 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set autoindent
 set ruler
 set backspace=indent,eol,start
-" Underlines the current line for cursor position.
-set cursorline
 
 " Stop auto comment symbols being added
 set formatoptions-=ro
@@ -75,10 +72,6 @@ autocmd BufNewFile,BufRead * setlocal formatoptions-=ro
 
 " Allows backspacing in insert mode.
 set backspace=indent,eol,start
-
-" Remove trailing whitespaces on save for specifc files
-autocmd BufWritePre *.c,*.cc,*.cpp,*.java,*.php,*.py,*.html,*.css,*.pl,*.js,
-\*.txt,*.r,*.cs,*.sh,*.m,*.yaml,*.json,*.md, mark w | %s/\s\+$//e | 'w
 
 " Changes for ignoring case and smart case during searches
 " set ignorecase
@@ -95,13 +88,24 @@ autocmd BufWritePre *.c,*.cc,*.cpp,*.java,*.php,*.py,*.html,*.css,*.pl,*.js,
 " Setting vim buffer size to 2000 lines max.
 set viminfo='20,<2000
 
-" Set the colorscheme based on being local or remote.
+" Remove trailing whitespaces on save for specifc files
+autocmd BufWritePre *.c,*.cc,*.cpp,*.java,*.php,*.py,*.html,*.css,*.pl,*.js,
+\*.txt,*.r,*.cs,*.sh,*.m,*.yaml,*.json,*.md, mark w | %s/\s\+$//e | 'w
+
+"Octave Syntax
+augroup filetypedetect
+  au! BufRead,BufNewFile *.m,*.oct set filetype=octave
+augroup END
+
+" Set the base colorscheme based on being local or remote.
 if ( $SSH_CLIENT != "" && $SSH_TTY != "" )
     colorscheme slate
 else
-    colorscheme zellner
+    "colorscheme zellner
+    colorscheme lunaperche
 endif
-"set background=dark
+set background=dark
+" All edits to color scheme must be after base is loaded.
 
 " Highlight column 80 and 200
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
@@ -109,7 +113,8 @@ let &colorcolumn="80,200"
 " If wanting to highlight column 80, 120+
 "let &colorcolumn="80,".join(range(120,999),",")
 
-"Octave Syntax
-augroup filetypedetect
-  au! BufRead,BufNewFile *.m,*.oct set filetype=octave
-augroup END
+" Underlines the current line for cursor position.
+highlight clear CursorLine
+highlight CursorLine gui=underline cterm=underline 
+"ctermfg=None guifg=None
+set cursorline
