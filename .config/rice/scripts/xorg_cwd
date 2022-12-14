@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # If the focused window is a terminal, creates a new terminal at the current
 # working directory.
 
