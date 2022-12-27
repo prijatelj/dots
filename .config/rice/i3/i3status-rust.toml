@@ -11,25 +11,29 @@ bat_discharging = "|v|"
 
 [[block]]
 block = "net"
-#command = "echo 'IP ' `curl bot.whatismyipaddress.com`" # assumes fontawesome icons
-#command = "echo '\uf0ac ' `curl bot.whatismyipaddress.com`" # assumes fontawesome icons
-#interval = 60
+#format = "{$signal_strength $ssid $frequency|Wired connection} via $device"
 
 [[block]]
-block = "custom"
-json = true
-command = ''' echo "{\"icon\":\"ping\",\"text\":\"`ping -c4 1.1.1.1 | tail -n1 | cut -d'/' -f5`\"}" '''
-interval = 60
+block = "external_ip"
+format = "{ip} {version} {country_flag} {region_code} {timezone}"
+
+#[[block]]
+# This causes the rest of the bar to not load immediately.
+#block = "custom"
+#json = true
+#command = ''' echo "{\"icon\":\"ping\",\"text\":\"`ping -c4 1.1.1.1 | tail -n1 | cut -d'/' -f5`\"}" '''
+#interval = 60
 
 #[[block.click]]
 #button = "left"
 #cmd = "<command>"
 
 # Weather
-[[block]]
-block = "custom"
-command = "sed 's/  //' <(curl 'https://wttr.in/?format=1' -s)"
-interval = 600
+# This also causes the bar to not load immediately
+#[[block]]
+#block = "custom"
+#command = "sed 's/  //' <(curl 'https://wttr.in/?format=1' -s)"
+#interval = 600
 
 
 # Local
@@ -60,11 +64,15 @@ interval = "once"
 [[block]]
 block = "battery"
 #icons_format = "{icon}" # Remove spaces aroud icons for this block.
+#format = "{percentage} {time}"
 
 [[block]]
 block = "cpu"
 #icons_format = "{icon}" # Remove spaces aroud icons for this block.
-interval = 1
+#interval = 1
+#interval = 1
+#format = "$barchart.str() $utilization.eng()"
+#format_alt = "$frequency.eng(){ $boost.str()|}"
 
 [[block]]
 block = "memory"
@@ -72,6 +80,7 @@ block = "memory"
 
 [[block]]
 block = "time"
+format = "%F %b %a %T"
 
 [[block]]
 block = "backlight"
