@@ -13,6 +13,7 @@
 
 # Handle config:
 !.config
+!.config/picom/*
 !.config/yapf/*
 !.config/gtk-3.0/*
 !.config/rice
