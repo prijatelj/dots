@@ -21,12 +21,12 @@ fi
 # add .local/bin for ipython and possibly any others.
 PATH="$PATH:~/.local/bin"
 
-# Add .config/rice/scripts for personal rice scripts.
-export PATH="~/.config/rice/scripts:$PATH"
+# Add .config/custom/scripts for personal custom scripts.
+export PATH="~/.config/custom/scripts:$PATH"
 
 # Aliases for Firefox layout saving and restoring
-alias ff_save='~/.config/rice/i3/firefox_save.sh'
-alias ff_restore='~/.config/rice/i3/firefox_restore.sh'
+alias ff_save='~/.config/custom/i3/firefox_save.sh'
+alias ff_restore='~/.config/custom/i3/firefox_restore.sh'
 
 # Notre Dame CRC ssh and scp alias examples that use a stored password.
 # Highly recommended to have this password be unique to CRC and strong.
@@ -38,7 +38,7 @@ alias crc2='crc_ssh username@crcfe02.crc.nd.edu'
 alias nd_vpn='openconnect-sso -s vpnaccess.nd.edu/nosplit'
 
 # Notre Dame CRC SCP aliases
-#alias crc1_cp='~/.config/rice/scripts/sshpass_scp.sh ~/.ssh/password_keys/nd_crc user@crcfe01.crc.nd.edu'
+#alias crc1_cp='~/.config/custom/scripts/sshpass_scp.sh ~/.ssh/password_keys/nd_crc user@crcfe01.crc.nd.edu'
 
 # Set manpath variable to include local man pages
 #export MANPATH="$(manpath):$HOME/.local/share/man/"

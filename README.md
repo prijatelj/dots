@@ -92,7 +92,7 @@ Be sure there are no existing files that overlap with those in the repo, otherwi
       for loading when logging back in.
         - and for ease of creating via a command or i3bar/dmenu type loading
           menu
-        - setup neofetch rice layout
+        - setup neofetch custom layout
     - Customizable contianer boarders and headers
         - font of i3 and font size.
         - Optionally hide/make visible via key command toggle.

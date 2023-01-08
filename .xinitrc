@@ -1,7 +1,7 @@
 #!/bin/sh
 
-userresources=$HOME/.config/rice/Xresources
-usermodmap=$HOME/.config/rice/Xmodmap
+userresources=$HOME/.config/custom/Xresources
+usermodmap=$HOME/.config/custom/Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
@@ -36,9 +36,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 #xrandr --output DP-2 --auto --output DVI-I-1 --auto --right-of DP-2
-
-picom -CGb --config $HOME/.config/rice/picom.conf
-$HOME/.config/rice/fehbg.sh &
+picom -CGb --config $HOME/.config/custom/picom.conf
+$HOME/.config/custom/fehbg.sh &
 unclutter --timeout 2 &
 
 # Set the initial screen brightness
@@ -47,4 +46,4 @@ brightnessctl s 1
 # Set initial volume via ALSA
 amixer -q sset Master 20% unmute
 
-i3 -c $HOME/.config/rice/i3/config
+i3 -c $HOME/.config/custom/i3/config
