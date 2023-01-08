@@ -8,7 +8,7 @@
 # TODO If layout change persists for longer than the given amount time, update
 # saved layouts
 
-FIREFOX_LAYOUT_DIR="$HOME/.config/rice/i3/firefox_layouts/"
+FIREFOX_LAYOUT_DIR="$HOME/.config/custom/i3/firefox_layouts/"
 if ! ls "$FIREFOX_LAYOUT_DIR" ; then
     printf "No such file or directory for FIREFOX_LAYOUT_DIR = %s\n" \
         "$FIREFOX_LAYOUT_DIR"

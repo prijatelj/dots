@@ -3,7 +3,7 @@
 # session ends, then loads th
 
 # TODO args management, if any
-FIREFOX_LAYOUT_DIR="$HOME/.config/rice/i3/firefox_layouts/"
+FIREFOX_LAYOUT_DIR="$HOME/.config/custom/i3/firefox_layouts/"
 
 # TODO Load prior workspace setup, use dummy terminal sessions as placeholders
 #   TODO NOTE this should be generalized and a part of another script that is
