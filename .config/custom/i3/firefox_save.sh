@@ -16,7 +16,7 @@ if ! ls "$FIREFOX_LAYOUT_DIR" ; then
 fi
 
 # TODO Should safely remove any old layout files in the directory before saving
-rm "$FIREFOX_LAYOUT_DIR/layout_out-*"
+rm "$FIREFOX_LAYOUT_DIR"/layout_out-*
 
 # Loop through the workspaces, saving their layouts if they contain firefox.
 for workspace in $(i3-msg -t get_workspaces | jq -c '.[]'); do
