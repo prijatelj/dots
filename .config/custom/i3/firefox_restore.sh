@@ -1,3 +1,4 @@
+#!/bin/sh
 # Opens Firefox, and if there is a prior firefox format, which needs saved
 # after firefox closes or before the system shutsdown/logouts or the xorg
 # session ends, then loads th

@@ -1,4 +1,3 @@
-#[icons]
 #icons = "awesome6"
 
 [icons.overrides]
@@ -13,9 +12,10 @@ bat_discharging = "|v|"
 block = "net"
 #format = "{$signal_strength $ssid $frequency|Wired connection} via $device"
 
-[[block]]
-block = "external_ip"
-format = "{ip} {version} {country_flag} {region_code} {timezone}"
+#[[block]]
+#block = "external_ip"
+#format = "{ip} {version} {country_flag} {region_code} {timezone}"
+#interval = 3600
 
 #[[block]]
 # This causes the rest of the bar to not load immediately.
@@ -49,7 +49,6 @@ interval = "once"
 block = "custom"
 command = "echo `uname` `uname -r | tr - . | cut -d. -f1-2`"
 interval = "once"
-
 #[[block]]
 #block = "custom"
 #json = true
@@ -61,18 +60,14 @@ interval = "once"
 #        \"mixer_idx\" : 0
 #}'"""
 
-[[block]]
-block = "battery"
+#[[block]]
+#block = "battery"
 #icons_format = "{icon}" # Remove spaces aroud icons for this block.
-#format = "{percentage} {time}"
 
 [[block]]
 block = "cpu"
 #icons_format = "{icon}" # Remove spaces aroud icons for this block.
-#interval = 1
-#interval = 1
-#format = "$barchart.str() $utilization.eng()"
-#format_alt = "$frequency.eng(){ $boost.str()|}"
+interval = 3
 
 [[block]]
 block = "memory"
@@ -82,8 +77,9 @@ block = "memory"
 block = "time"
 format = "%F %b %a %T"
 
-[[block]]
-block = "backlight"
+
+#[[block]]
+#block = "backlight"
 
 [[block]]
 block = "sound"

@@ -213,8 +213,10 @@ bindsym $mod+r mode "resize"
 bar {
         #status_command i3status
         status_command i3status-rs ~/.config/custom/i3/i3status-rust.toml
-        mode invisible
+        #mode invisible
         #binding_mode_indicator no
+
+        font 20
 }
 # Toggle visibility of i3bar
 bindsym $mod+b exec --no-startup-id ~/.config/custom/i3/i3bartoggle.sh

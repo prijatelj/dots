@@ -41,9 +41,9 @@ $HOME/.config/custom/fehbg.sh &
 unclutter --timeout 2 &
 
 # Set the initial screen brightness
-brightnessctl s 1
+#brightnessctl s 1
 
 # Set initial volume via ALSA
-amixer -q sset Master 20% unmute
+amixer -q sset Master 100% unmute
 
 i3 -c $HOME/.config/custom/i3/config
