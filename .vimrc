@@ -103,6 +103,9 @@ if ( $SSH_CLIENT != "" && $SSH_TTY != "" )
 else
     "colorscheme zellner
     colorscheme lunaperche
+
+    "Set highlight for matching parentheses
+    hi MatchParen cterm=none ctermbg=darkblue ctermfg=none
 endif
 set background=dark
 " All edits to color scheme must be after base is loaded.
