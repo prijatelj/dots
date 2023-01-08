@@ -44,7 +44,7 @@ do
 done
 
 # Open firefox in one tmp workspace that restores the last session
-i3-msg "workspace tmp_firefox; exec /usr/bin/firefox; workspace $WORKSPACE_ID"
+i3-msg "workspace tmp_firefox; exec $(which firefox); workspace $WORKSPACE_ID"
 
 # TODO Account for visual error by restarting i3 inplace
 #sleep 10 # Takes a bit to load firefox and move them appropriately
