@@ -1,7 +1,5 @@
-#
+#!/bin/sh
 # ~/.bashrc
-#
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -20,9 +18,6 @@ fi
 
 # add .local/bin for ipython and possibly any others.
 PATH="$PATH:~/.local/bin"
-
-# Add .config/custom/scripts for personal custom scripts.
-export PATH="~/.config/custom/scripts:$PATH"
 
 # Aliases for Firefox layout saving and restoring
 alias ff_save='~/.config/custom/i3/firefox_save.sh'
