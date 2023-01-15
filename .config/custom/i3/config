@@ -244,7 +244,7 @@ bindsym $mod+End mode "$mode_system"
 
 # assign workspace 1 to primary output display
 workspace 1 output HDMI-0
-workspace 0 output DVI-I-1
+workspace 10 output DVI-I-1
 
 # Audio controls for ALSA, use comma (decrease) and period (incease) small,
 # shift for large jump, slash to mute.
