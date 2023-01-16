@@ -20,6 +20,7 @@
 !.config/custom/*
 !.config/custom/*/*
 !.config/discord
+!.config/discord/*
 
 # Dots repo files that are either notes or manual configurations
 !dots
