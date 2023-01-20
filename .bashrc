@@ -1,7 +1,5 @@
-#
+#!/bin/sh
 # ~/.bashrc
-#
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -21,14 +19,9 @@ fi
 # add .local/bin for ipython and possibly any others.
 PATH="$PATH:~/.local/bin"
 
-# Set alias for generating a random password
-alias randpass='~/.config/rice/scripts/randpass.sh'
-
-# Set alias for viewing tabular files with comma, tabs, or other delimiters
-alias csvread='~/.config/rice/scripts/csvread.sh'
-
-# Set alias for creating another terminal at current working directory
-alias xorg_cwd='~/.config/rice/scripts/xorg_cwd.sh'
+# Aliases for Firefox layout saving and restoring
+alias ff_save='~/.config/custom/i3/firefox_save.sh'
+alias ff_restore='~/.config/custom/i3/firefox_restore.sh'
 
 # Aliases for Firefox layout saving and restoring
 alias ff_save='~/.config/rice/i3/firefox_save.sh'
@@ -44,7 +37,7 @@ alias crc2='crc_ssh username@crcfe02.crc.nd.edu'
 alias nd_vpn='openconnect-sso -s vpnaccess.nd.edu/nosplit'
 
 # Notre Dame CRC SCP aliases
-#alias crc1_cp='~/.config/rice/scripts/sshpass_scp.sh ~/.ssh/password_keys/nd_crc user@crcfe01.crc.nd.edu'
+#alias crc1_cp='~/.config/custom/scripts/sshpass_scp.sh ~/.ssh/password_keys/nd_crc user@crcfe01.crc.nd.edu'
 
 # Set manpath variable to include local man pages
 #export MANPATH="$(manpath):$HOME/.local/share/man/"

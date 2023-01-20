@@ -1,3 +1,4 @@
+!!! Color Scheme
 ! special
 #define FOREGROUND   #e0e3e1
 #define BACKGROUND   #000000
@@ -41,11 +42,16 @@
 #define COLOR7       #707880
 #define COLOR15      #fbfffc
 
-! fonts
-#define FONT dina 
+! fonts : Note all font names need to be as listed in `fc-list`
+!#define FONT Dina
+
 #define FONT_SIZE 10
+
+#define LETTER_SPACE 0
+#define LINE_SPACE 0
 
 ! Stay aware of fonts: Tamsyn, Terminus, ProggyClean, MonteCarlo,
 ! Fira Mono/Code
 !#define FONT Tamsyn
 !#define FONT Terminus
+#define FONT Hack Nerd Font Mono

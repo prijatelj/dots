@@ -32,7 +32,7 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 # start a terminal at current working directory
-bindsym $mod+Shift+Return exec ~/.config/rice/scripts/xorg_cwd.sh
+bindsym $mod+Shift+Return exec ~/.config/custom/scripts/xorg_cwd
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -176,9 +176,9 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 ## TODO exit i3 (logs you out of your X session) and restores your workspace setup upon next login
-#bindsym $mod+Shift+e exec ~/.config/rice/i3/exit_menu.sh 
+#bindsym $mod+Shift+e exec ~/.config/custom/i3/exit_menu.sh 
 # exit i3 (logs you out of your X session) and does NOT perserve the workspace on
-bindsym $mod+Shift+Ctrl+e exec ~/.config/rice/i3/exit_menu.sh 
+bindsym $mod+Shift+Ctrl+e exec ~/.config/custom/i3/exit_menu 
 
 
 # resize window (you can also use the mouse for that)
@@ -211,11 +211,19 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        #status_command i3status
+        status_command i3status-rs ~/.config/custom/i3/i3status-rust.toml
+        #mode invisible
+        #binding_mode_indicator no
+
+        font 20
 }
+# Toggle visibility of i3bar
+bindsym $mod+b exec --no-startup-id ~/.config/custom/i3/i3bartoggle.sh
 
 # Shutdown, reboot, lock screen hotkeys given polkit; Uses i3lock-color
-set $Locker i3lock -fc 000000 -B 1 --verifcolor FFFFFFFF --wrongcolor FFFFFFFF --layoutcolor FFFFFFFF --wrongcolor FFFFFFFF && sleep 1
+#set $Locker i3lock -fc 000000 -B 1 --verifcolor FFFFFFFF --wrongcolor FFFFFFFF --layoutcolor FFFFFFFF --wrongcolor FFFFFFFF && sleep 1
+set $Locker i3lock-fancy
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
@@ -231,32 +239,35 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+Pause mode "$mode_system"
-
-# assign workspace 1 to primary output display
-# Myth:
-#workspace 1 output DP-2
-# CVRL workstation:
-# TODO make this an X-Resource specified thing, along w/ other monitor ids.
-workspace 1 output DPY-2
+bindsym $mod+End mode "$mode_system"
 
 # Audio controls for ALSA, use comma (decrease) and period (incease) small,
 # shift for large jump, slash to mute.
 # TODO consider default: 5, ctrl 1, shift 10.
 # Up/Down 1%
-#bindsym $mod+period exec "amixer -q sset Master,0 1+ unmute"
-#bindsym $mod+comma exec "amixer -q sset Master,0 1- unmute"
+bindsym $mod+period exec "amixer -q sset Master,0 1+ unmute"
+bindsym $mod+comma exec "amixer -q sset Master,0 1- unmute"
 
 # Up/Down 5%
-#bindsym $mod+Shift+period exec "amixer -q sset Master,0 5+ unmute"
-#bindsym $mod+Shift+comma exec "amixer -q sset Master,0 5- unmute"
+bindsym $mod+Shift+period exec "amixer -q sset Master,0 5+ unmute"
+bindsym $mod+Shift+comma exec "amixer -q sset Master,0 5- unmute"
+
+bindsym XF86AudioRaiseVolume exec "amixer -q sset Master 5%+ unmute"
+bindsym XF86AudioLowerVolume exec "amixer -q sset Master 5%- unmute"
+bindsym Ctrl+XF86AudioRaiseVolume exec "amixer -q sset Master 10%+ unmute"
+bindsym Ctrl+XF86AudioLowerVolume exec "amixer -q sset Master 10%- unmute"
+
+# XF86AudioLowerVolume
+# XF86AudioRaiseVolume
+# XF86MonBrightnessDown
+# XF86MonBrightnessUp
 
 # Up/Down 10%
-#bindsym $mod+Ctrl+period exec "amixer -q sset Master,0 10+ unmute"
-#bindsym $mod+Ctrl+comma exec "amixer -q sset Master,0 10- unmute"
+bindsym $mod+Ctrl+period exec "amixer -q sset Master,0 10%+ unmute"
+bindsym $mod+Ctrl+comma exec "amixer -q sset Master,0 10%- unmute"
 
 # Toggle Mute 10%
-#bindsym $mod+slash exec "amixer -q sset Master,0 toggle"
+bindsym $mod+slash exec "amixer -q sset Master,0 toggle"
 
 # Mic: Toggle Mute
 # ??? Do not know how to do this atm with amixer
@@ -266,19 +277,40 @@ workspace 1 output DPY-2
 # TODO set $sink "1" probably make this an Xresource variable $PACTL_SINK
 
 # Up/Down 1%
-bindsym $mod+period exec "pactl set-sink-volume 0 +1%"
-bindsym $mod+comma exec "pactl set-sink-volume 0 -1%"
+#bindsym $mod+period exec "pactl set-sink-volume 0 +1%"
+#bindsym $mod+comma exec "pactl set-sink-volume 0 -1%"
 
 # Up/Down 5%
-bindsym $mod+Shift+period exec "pactl set-sink-volume 0 +5%"
-bindsym $mod+Shift+comma exec "pactl set-sink-volume 0 -5%"
+#bindsym $mod+Shift+period exec "pactl set-sink-volume 0 +5%"
+#bindsym $mod+Shift+comma exec "pactl set-sink-volume 0 -5%"
 
 # Up/Down 10%
-bindsym $mod+Ctrl+period exec "pactl set-sink-volume 0 +10%"
-bindsym $mod+Ctrl+comma exec "pactl set-sink-volume 0 -10%"
+#bindsym $mod+Ctrl+period exec "pactl set-sink-volume 0 +10%"
+#bindsym $mod+Ctrl+comma exec "pactl set-sink-volume 0 -10%"
 
 # Toggle Mute 10%
-bindsym $mod+slash exec "pactl set-sink-mute 0 toggle"
+#bindsym $mod+slash exec "pactl set-sink-mute 0 toggle"
 
 # Mic: Toggle Mute
-bindsym $mod+Shift+slash exec "pactl set-source-mute 0 toggle"
+#bindsym $mod+Shift+slash exec "pactl set-source-mute 0 toggle"
+
+
+# Brightnessctrl
+bindsym XF86MonBrightnessUp exec "brightnessctl s 5%+"
+bindsym XF86MonBrightnessDown exec "brightnessctl s 5%-"
+bindsym Ctrl+XF86MonBrightnessUp exec "brightnessctl s 1%+"
+bindsym Ctrl+XF86MonBrightnessDown exec "brightnessctl s 1%-"
+bindsym Mod1+XF86MonBrightnessUp exec "brightnessctl s 1+"
+bindsym Mod1+XF86MonBrightnessDown exec "brightnessctl s 1-"
+
+
+# i3-gaps and border management
+for_window [class=".*"] border pixel 1
+
+#smart_gaps 
+#smart_gaps inverse_outer
+
+#smart_borders no_gaps
+
+#gaps outer 10
+gaps inner 4

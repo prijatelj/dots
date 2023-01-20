@@ -1,9 +1,10 @@
+#!/bin/sh
 # Opens Firefox, and if there is a prior firefox format, which needs saved
 # after firefox closes or before the system shutsdown/logouts or the xorg
 # session ends, then loads th
 
 # TODO args management, if any
-FIREFOX_LAYOUT_DIR="$HOME/.config/rice/i3/firefox_layouts/"
+FIREFOX_LAYOUT_DIR="$HOME/.config/custom/i3/firefox_layouts/"
 
 # TODO Load prior workspace setup, use dummy terminal sessions as placeholders
 #   TODO NOTE this should be generalized and a part of another script that is
@@ -43,7 +44,7 @@ do
 done
 
 # Open firefox in one tmp workspace that restores the last session
-i3-msg "workspace tmp_firefox; exec /usr/bin/firefox; workspace $WORKSPACE_ID"
+i3-msg "workspace tmp_firefox; exec firefox; workspace $WORKSPACE_ID"
 
 # TODO Account for visual error by restarting i3 inplace
 #sleep 10 # Takes a bit to load firefox and move them appropriately

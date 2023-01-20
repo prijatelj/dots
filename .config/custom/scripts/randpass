@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # creates a random string, good for passwords.
 
 # Check number args

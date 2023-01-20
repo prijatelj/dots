@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Outputs column view of the given file with
 
 # Check number args

@@ -1,0 +1,88 @@
+#icons = "awesome6"
+
+[icons.overrides]
+bat = "| |"
+bat_full = "|X|"
+bat_charging = "|^|"
+bat_discharging = "|v|"
+
+# Internets
+
+[[block]]
+block = "net"
+#format = "{$signal_strength $ssid $frequency|Wired connection} via $device"
+
+#[[block]]
+#block = "external_ip"
+#format = "{ip} {version} {country_flag} {region_code} {timezone}"
+#interval = 3600
+
+#[[block]]
+# This causes the rest of the bar to not load immediately.
+#block = "custom"
+#json = true
+#command = ''' echo "{\"icon\":\"ping\",\"text\":\"`ping -c4 1.1.1.1 | tail -n1 | cut -d'/' -f5`\"}" '''
+#interval = 60
+
+#[[block.click]]
+#button = "left"
+#cmd = "<command>"
+
+# Weather
+# This also causes the bar to not load immediately
+#[[block]]
+#block = "custom"
+#command = "sed 's/  //' <(curl 'https://wttr.in/?format=1' -s)"
+#interval = 600
+
+
+# Local
+
+[[block]]
+block = "custom"
+command = '''echo "$(whoami) @ $(cat /etc/hostname)"'''
+interval = "once"
+#icons_format = "{icon}"
+
+
+[[block]]
+block = "custom"
+command = "echo `uname` `uname -r | tr - . | cut -d. -f1-2`"
+interval = "once"
+#[[block]]
+#block = "custom"
+#json = true
+#command = """echo '{
+#        \"format\" : \"♪: %volume\",
+#        \"format_muted\" : \"♪: muted (%volume)\",
+#        \"device\" : \"default\",
+#        \"mixer\" : \"Master\",
+#        \"mixer_idx\" : 0
+#}'"""
+
+#[[block]]
+#block = "battery"
+#icons_format = "{icon}" # Remove spaces aroud icons for this block.
+
+[[block]]
+block = "cpu"
+#icons_format = "{icon}" # Remove spaces aroud icons for this block.
+interval = 3
+
+[[block]]
+block = "memory"
+
+
+[[block]]
+block = "time"
+format = "%F %b %a %T"
+
+
+#[[block]]
+#block = "backlight"
+
+[[block]]
+block = "sound"
+
+#[[block]]
+#block = "bluetooth"

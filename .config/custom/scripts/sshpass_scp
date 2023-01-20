@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # NOTE that this script may not respect scp of multiple sources to one target.
 
 # Check number args

@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/sh
 # Saves current Firefox Browser layout: windows to workspaces and workspaces to
 # monitors
 
@@ -8,7 +8,7 @@
 # TODO If layout change persists for longer than the given amount time, update
 # saved layouts
 
-FIREFOX_LAYOUT_DIR="$HOME/.config/rice/i3/firefox_layouts/"
+FIREFOX_LAYOUT_DIR="$HOME/.config/custom/i3/firefox_layouts/"
 if ! ls "$FIREFOX_LAYOUT_DIR" ; then
     printf "No such file or directory for FIREFOX_LAYOUT_DIR = %s\n" \
         "$FIREFOX_LAYOUT_DIR"
@@ -16,7 +16,7 @@ if ! ls "$FIREFOX_LAYOUT_DIR" ; then
 fi
 
 # TODO Should safely remove any old layout files in the directory before saving
-rm "$FIREFOX_LAYOUT_DIR/layout_out-*"
+rm "$FIREFOX_LAYOUT_DIR"/layout_out-*
 
 # Loop through the workspaces, saving their layouts if they contain firefox.
 for workspace in $(i3-msg -t get_workspaces | jq -c '.[]'); do

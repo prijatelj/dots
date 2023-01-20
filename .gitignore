@@ -15,10 +15,12 @@
 !.config
 !.config/yapf/*
 !.config/gtk-3.0/*
-!.config/rice
-!.config/rice
-!.config/rice/*
-!.config/rice/*/*
+!.config/custom
+!.config/custom
+!.config/custom/*
+!.config/custom/*/*
+!.config/discord
+!.config/discord/*
 
 # Dots repo files that are either notes or manual configurations
 !dots
