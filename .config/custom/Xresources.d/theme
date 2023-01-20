@@ -45,7 +45,7 @@
 ! fonts : Note all font names need to be as listed in `fc-list`
 !#define FONT Dina
 
-#define FONT_SIZE 10
+#define FONT_SIZE 8
 
 #define LETTER_SPACE 0
 #define LINE_SPACE 0

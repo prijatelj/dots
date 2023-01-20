@@ -81,7 +81,8 @@ URxvt.lineSpace: LINE_SPACE
 putting text in terminal too. Found this out while trying double quotes around
 the entire \033 to \007
 
-URxvt.keysym.C-0: command:\033]710;-*-*-medium-r-normal-*-10-*-*-*-*-*-*-*\007
-URxvt.keysym.C-minus: command:\033]710;-*-*-medium-r-normal-*-8-*-*-*-*-*-*-*\007
+! TODO These need redone, as they change the font from Hack to some default.
+URxvt.keysym.C-0: command:\033]710;-*-*-medium-r-normal-*-8-*-*-*-*-*-*-*\007
+URxvt.keysym.C-minus: command:\033]710;-*-*-medium-r-normal-*-6-*-*-*-*-*-*-*\007
 URxvt.keysym.C-equal: command:\033]710;-*-*-medium-r-normal-*-16-*-*-*-*-*-*-*\007
 URxvt.keysym.C-plus: command:\033]710;-*-*-medium-r-normal-*-20-*-*-*-*-*-*-*\007
