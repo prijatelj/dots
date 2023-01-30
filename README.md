@@ -1,6 +1,6 @@
 ## Dots
 
-Arch linux dot files for custom configuration and ricing.
+Linux dot files for custom configuration.
 
 ### Install
 
