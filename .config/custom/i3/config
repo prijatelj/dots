@@ -245,12 +245,12 @@ bindsym $mod+End mode "$mode_system"
 # shift for large jump, slash to mute.
 # TODO consider default: 5, ctrl 1, shift 10.
 # Up/Down 1%
-bindsym $mod+period exec "amixer -q sset Master,0 1+ unmute"
-bindsym $mod+comma exec "amixer -q sset Master,0 1- unmute"
+bindsym $mod+period exec "amixer -q sset Master,0 1%+ unmute"
+bindsym $mod+comma exec "amixer -q sset Master,0 1%- unmute"
 
 # Up/Down 5%
-bindsym $mod+Shift+period exec "amixer -q sset Master,0 5+ unmute"
-bindsym $mod+Shift+comma exec "amixer -q sset Master,0 5- unmute"
+bindsym $mod+Shift+period exec "amixer -q sset Master,0 5%+ unmute"
+bindsym $mod+Shift+comma exec "amixer -q sset Master,0 5%- unmute"
 
 bindsym XF86AudioRaiseVolume exec "amixer -q sset Master 5%+ unmute"
 bindsym XF86AudioLowerVolume exec "amixer -q sset Master 5%- unmute"
