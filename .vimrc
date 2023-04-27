@@ -60,10 +60,13 @@ let g:indent_guides_enable_on_vim_startup = 1
 syntax on
 set number
 " On pressing tab, insert spaces
-set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab
 set autoindent
 set ruler
 set backspace=indent,eol,start
+
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab smarttab
+autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 expandtab smarttab
 
 " Stop auto comment symbols being added
 set formatoptions-=ro
@@ -118,6 +121,7 @@ highlight clear CursorLine
 highlight CursorLine gui=underline cterm=underline 
 "ctermfg=None guifg=None
 set cursorline
+
 
 "Set highlight for matching parentheses
 hi MatchParen cterm=none ctermbg=darkblue ctermfg=none
