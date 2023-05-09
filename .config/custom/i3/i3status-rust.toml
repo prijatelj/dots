@@ -14,8 +14,8 @@ block = "net"
 #format = "{$signal_strength $ssid $frequency|Wired connection} via $device"
 
 [[block]]
-block = "external_ip"
-format = "{ip} {version} {country_flag} {region_code} {timezone}"
+#block = "external_ip"
+#format = "{ip} {version} {country_flag} {region_code} {timezone}"
 
 #[[block]]
 # This causes the rest of the bar to not load immediately.
