@@ -1,0 +1,9 @@
+#!/bin/sh
+# Starts local webdav to access a remote for zotero backups, quits whne done
+PID=$(rclone serve webdav \
+    theomnipotentwoof:Zotero/ \
+    --user prijatelj \
+    --pass much_learning_wow \
+   --addr localhost:15987 >/dev/null & echo $!)
+exec /etc/profiles/per-user/prijatelj/bin/zotero & wait
+kill -s QUIT "$PID"
