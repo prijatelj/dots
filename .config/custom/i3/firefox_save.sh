@@ -1,4 +1,5 @@
-#!/usr/bin/bash
+#!/bin/sh
+
 # Saves current Firefox Browser layout: windows to workspaces and workspaces to
 # monitors
 

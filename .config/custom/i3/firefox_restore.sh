@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Opens Firefox, and if there is a prior firefox format, which needs saved
 # after firefox closes or before the system shutsdown/logouts or the xorg
 # session ends, then loads th
@@ -43,7 +45,7 @@ do
 done
 
 # Open firefox in one tmp workspace that restores the last session
-i3-msg "workspace tmp_firefox; exec /usr/bin/firefox; workspace $WORKSPACE_ID"
+i3-msg "workspace tmp_firefox; exec firefox; workspace $WORKSPACE_ID"
 
 # TODO Account for visual error by restarting i3 inplace
 #sleep 10 # Takes a bit to load firefox and move them appropriately
