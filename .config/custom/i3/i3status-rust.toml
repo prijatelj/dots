@@ -75,7 +75,7 @@ block = "memory"
 
 [[block]]
 block = "time"
-format = "%F %b %a %T"
+format = "$icon $timestamp.datetime(f:'%F %b %a %T')"
 
 
 #[[block]]
