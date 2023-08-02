@@ -13,7 +13,7 @@ bat_discharging = "|v|"
 block = "net"
 #format = "{$signal_strength $ssid $frequency|Wired connection} via $device"
 
-[[block]]
+#[[block]]
 #block = "external_ip"
 #format = "{ip} {version} {country_flag} {region_code} {timezone}"
 
@@ -80,7 +80,8 @@ block = "memory"
 
 [[block]]
 block = "time"
-format = "%F %b %a %T"
+format = "$icon $timestamp.datetime(f:'%F %b %a %T')"
+
 
 [[block]]
 block = "backlight"
