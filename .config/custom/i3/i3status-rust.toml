@@ -65,13 +65,22 @@ interval = "once"
 #icons_format = "{icon}" # Remove spaces aroud icons for this block.
 
 [[block]]
+block = "nvidia_gpu"
+interval = 30
+
+[[block]]
 block = "cpu"
 #icons_format = "{icon}" # Remove spaces aroud icons for this block.
 interval = 3
 
 [[block]]
-block = "memory"
+block = "temperature"
+interval = 10
+scale = "celsius"
+chip = "*-isa-*"
 
+[[block]]
+block = "memory"
 
 [[block]]
 block = "time"
