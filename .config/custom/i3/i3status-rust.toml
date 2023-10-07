@@ -1,5 +1,6 @@
-[icons]
-icons = "awesome6"
+#[icons]
+#icons = "awesome6"
+# idk how to install em from NixOS such that the bar uses them.
 
 [icons.overrides]
 bat = "| |"
