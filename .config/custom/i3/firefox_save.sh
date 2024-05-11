@@ -8,6 +8,11 @@
 # TODO If layout change persists for longer than the given amount time, update
 # saved layouts
 
+if [[ -z "$(pidof firefox)" ]]; then
+	printf "pidof did not find 'firefox'. Is Firefox running?"
+	exit 1
+fi
+
 FIREFOX_LAYOUT_DIR="$HOME/.config/custom/i3/firefox_layouts/"
 if ! ls "$FIREFOX_LAYOUT_DIR" ; then
     printf "No such file or directory for FIREFOX_LAYOUT_DIR = %s\n" \
