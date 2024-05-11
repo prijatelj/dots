@@ -9,7 +9,7 @@
 # saved layouts
 
 if [[ -z "$(pidof firefox)" ]]; then
-	printf "pidof did not find 'firefox'. Is Firefox running?"
+	printf "'pidof' did not find 'firefox'. Is Firefox running?\n"
 	exit 1
 fi
 
