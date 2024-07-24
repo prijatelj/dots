@@ -1,0 +1,39 @@
+#!/usr/bin/env python
+import re
+import sys
+
+
+def convert_bookmarks_gs_to_pdftk(file, outfile):
+    pat = re.compile(r'\[(?:/Count (?P<count>\d+) )?(?>/Page )(?P<page>\d+)(?> /Title \()(?P<title>.*)\)')
+
+    with open(file, 'r') as openf:
+        with open(outfile, 'w') as writef:
+            counts = []
+            for i, line in enumerate(openf):
+                found = pat.findall(line)
+
+                if found:
+                    count, page, title = found[0]
+                    page = int(page)
+
+                    writef.write('BookmarkBegin\n')
+                    writef.write(f'BookmarkTitle: {title}\n')
+                    writef.write(f'BookmarkLevel: {len(counts) + 1}\n')
+                    writef.write(f'BookmarkPageNumber: {page}\n')
+
+                    if counts:
+                        counts[-1] -= 1
+
+                        if count != '':
+                            counts.append(int(count))
+                        else:
+                            while counts and counts[-1] <= 0:
+                                counts.pop()
+                    elif count != '':
+                        counts.append(int(count))
+                else:
+                    print(f'not found for line: {i}: "{line}"')
+
+
+if __name__ == "__main__":
+    convert_bookmarks_gs_to_pdftk(*sys.argv[1:])
