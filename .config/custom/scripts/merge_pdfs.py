@@ -1,7 +1,7 @@
 # Script for merging pdfs from the given order into a single one with
 # bookmarks for the start of each file. Optionall concat.
 # Depends upon pdftk, grep, awk, & python 3.11 (whenever walrus op :=
-# introduced. Grep & awk could be replaced with python regex.
+# introduced). Grep & awk could be replaced with python regex.
 
 import os
 import subprocess
@@ -19,10 +19,11 @@ with open('combine_books.txt') as openf:
     while line := openf.readline():
         file = line.rstrip()
         files.append(file)
-        if start_cat:
-            data = subprocess.run([f"pdftk {file} dump_data"]))
-            pg_counts.append(subprocess.run([f"echo {data} | grep NumberOfPages | awk '{print $2}'"]))
-            bookmarks.append(subprocess.run([f"echo {data} | grep Bookmark"]))
+
+        # Get pdf's data
+        data = subprocess.run([f"pdftk {file} dump_data"]))
+        pg_counts.append(subprocess.run([f"echo {data} | grep NumberOfPages | awk '{print $2}'"]))
+        bookmarks.append(subprocess.run([f"echo {data} | grep Bookmark"]))
 
 # TODO Create bookmarks for the pdfs
 
@@ -47,16 +48,20 @@ for i, file in enumerate(files):
         f'BookmarkPageNumber: {page_inc + 1}'
     )
 
-    if page_inc > 0:
-        bookmark_info += f'\n{init_bookmark}'
-        bookmarks[i] =
-    else:
-        bookmark_info += f'{init_bookmark}'
+    bookmark_info += f'\n{init_bookmark}'
+    # TODO Increase Levels by 1
+    #regex to find, get value, then increment and replace.
 
-    bookmark_info += bookmarks[i]
+    if page_inc > 0:
+        if bookmarks[i]:
+            bookmark_info += f'\n{bookmarks[i]}'
+            # TODO Increase page number of bookmarks by page_inc
+            #regex to find, get value, then increment and replace.
+
     page_inc += pg_counts[i]
 
 # Then merge them into one pdftk bookmarks info file
+bookmark_info = '\n'.join(bookmark_info)
 
 # Merge the src pdfs
 # TODO seems I have to do this *per* file . . .
