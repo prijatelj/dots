@@ -1,0 +1,9 @@
+[env]
+WINIT_X11_SCALE_FACTOR = "0.6"
+
+[window]
+opacity = 0.9
+blur = true
+
+[colors.primary]
+background = "#000000"
