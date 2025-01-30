@@ -1,0 +1,8 @@
+[character]
+error_symbol = '[x](bold red)'
+
+[username]
+show_always = true
+
+[hostname]
+ssh_only = false
