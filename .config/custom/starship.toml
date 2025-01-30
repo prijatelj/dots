@@ -3,6 +3,13 @@ error_symbol = '[x](bold red)'
 
 [username]
 show_always = true
+format = '[$user]($style) [@](purple) '
 
 [hostname]
 ssh_only = false
+format = '[$hostname]($style): '
+
+[directory]
+truncation_length = 12
+truncate_to_repo = false
+truncation_symbol = '.../'
