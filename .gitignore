@@ -13,6 +13,7 @@
 
 # Handle config:
 !.config
+!.config/mimeapps.list
 !.config/alacritty
 !.config/alacritty/*
 !.config/yapf/*
