@@ -4,6 +4,6 @@ PID=$(rclone serve webdav \
     theomnipotentwoof:Zotero/ \
     --user prijatelj \
     --pass much_learning_wow \
-   --addr localhost:15987 >/dev/null & echo $!)
+   --addr localhost:$ZOTERO_PORT >/dev/null & echo $!)
 exec /etc/profiles/per-user/prijatelj/bin/zotero & wait
 kill -s QUIT "$PID"
