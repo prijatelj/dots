@@ -4,6 +4,34 @@ WINIT_X11_SCALE_FACTOR = "0.6"
 [window]
 opacity = 0.9
 blur = true
+padding = { x = 4, y = 4 }
+decorations = "Transparent"
+resize_increments = true
+
+[scrolling]
+history = 100000
+
+#[colors]
+#transparent_background_colors = true
 
 [colors.primary]
 background = "#000000"
+
+[keyboard]
+bindings = [
+# Increase Font Size in 3x the increments per hotkey
+{ key = "+", mods = "Control|Shift ", action = "IncreaseFontSize" },
+{ key = "+", mods = "Control|Shift ", action = "IncreaseFontSize" },
+{ key = "+", mods = "Control|Shift ", action = "IncreaseFontSize" },
+
+# Decrease Font Size in 3x the increments per hotkey
+{ key = "_", mods = "Control|Shift ", action = "DecreaseFontSize" },
+{ key = "_", mods = "Control|Shift ", action = "DecreaseFontSize" },
+{ key = "_", mods = "Control|Shift ", action = "DecreaseFontSize" },
+
+# Duplicate of reset font size for those with heavy fingers on shift ;]
+{ key = ")", mods = "Control|Shift ", action = "ResetFontSize" },
+
+# Fullscreen Toggle
+{ key = "F11", action = "ToggleFullscreen" },
+]
