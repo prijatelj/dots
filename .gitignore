@@ -16,6 +16,8 @@
 !.config/mimeapps.list
 !.config/alacritty
 !.config/alacritty/*
+!.config/hypr
+!.config/hypr/*
 !.config/yapf/*
 !.config/gtk-3.0/*
 !.config/custom
