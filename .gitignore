@@ -16,6 +16,8 @@
 !.config/mimeapps.list
 !.config/alacritty
 !.config/alacritty/*
+!.config/anyrun
+!.config/anyrun/*
 !.config/hypr
 !.config/hypr/*
 !.config/yapf/*
