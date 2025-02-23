@@ -1,4 +1,6 @@
-[[ uwsm check may-start N 1 2 ]] && exec uwsm start hyprland.desktop
+if uwsm check may-start 1 2; then
+	exec uwsm start hyprland-uwsm.desktop
+fi
 
 [[ -z $DISPLAY && $XDG_VTNR -ge 3 && $XDG_VTNR -le 4 ]] && exec startx
 
