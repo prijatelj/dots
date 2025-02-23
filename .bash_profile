@@ -1,5 +1,6 @@
-# startx for only tty1 thru tty3
-[[ -z $DISPLAY && $XDG_VTNR -le 3 ]] && exec startx
+[[ uwsm check may-start N 1 2 ]] && exec uwsm start hyprland.desktop
+
+[[ -z $DISPLAY && $XDG_VTNR -ge 3 && $XDG_VTNR -le 4 ]] && exec startx
 
 # source bashrc
 [[ -f ~/.bashrc ]] && . ~/.bashrc
