@@ -20,6 +20,8 @@
 !.config/anyrun/*
 !.config/hypr
 !.config/hypr/*
+!.config/waybar
+!.config/waybar/*
 !.config/yapf/*
 !.config/gtk-3.0/*
 !.config/custom
