@@ -41,7 +41,7 @@ def get_app_to_windows(clients_json, keys=None):
 
 def load_layout(
     filepath,
-    app_set=None,
+    include_apps=None,
     layout_existing=False,
     run_apps=True,          # TODO make set/map for app specific run rules
     run_per_windows=None,   # TODO run the app per window, rather than once
@@ -84,7 +84,7 @@ def load_layout(
                 subprocess.run(f'hyprctl dispatch exec "[workspace name:Loading {app}... silent;]" {app}', shell=True)
 
         # Sleep to wait to compelte loading. TODO replace with better listener.
-        subprocess.run(['sleep', '3'])
+        #subprocess.run(['sleep', '3'])
 
         # Get new window data # TODO would be nice to target just tmp workspace
         loaded_apps  = get_app_to_windows(
@@ -145,11 +145,16 @@ if __name__ == '__main__':
     )
     parser.add_argument(
         '-a',
-        '--apps',
+        '--include_apps',
         #nargs='*',
         #help='List of app names to be loaded (case insensitive)',
         help='Specific app name to be loaded (case insensitive)',
     )
+
+    parser.add_argument('--layout_existing', action='store_true')
+    parser.add_argument('--no_run_apps', dest='run_apps', action='store_false')
+    parser.set_defaults(run_apps=True)
+
     parser.add_argument(
         '--log',
         help='Log file or directory to write any logging to.',
@@ -170,7 +175,14 @@ if __name__ == '__main__':
     elif not os.path.isfile(args.path):
         raise ValueError(f'{args.path} is neither a directory or a file.')
 
-    if args.apps is not None:
-        args.apps = set([args.apps])
+    if args.include_apps is not None:
+        args.include_apps = set([args.include_apps])
 
-    load_layout(args.path, args.apps)
+    load_layout(
+        args.path,
+        args.include_apps,
+        args.layout_existing,
+        args.run_apps,
+        #run_per_windows=None,
+        #keys=None,
+    )
