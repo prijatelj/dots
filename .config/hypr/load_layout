@@ -84,7 +84,7 @@ def load_layout(
                 subprocess.run(f'hyprctl dispatch exec "[workspace name:Loading {app}... silent;]" {app}', shell=True)
 
         # Sleep to wait to compelte loading. TODO replace with better listener.
-        #subprocess.run(['sleep', '3'])
+        subprocess.run(['sleep', '3'])
 
         # Get new window data # TODO would be nice to target just tmp workspace
         loaded_apps  = get_app_to_windows(
