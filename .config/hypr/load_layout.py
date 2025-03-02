@@ -13,6 +13,7 @@ that window managers and wayland compositors seem to not provide by default.
 # per window, such as most terminals
 
 import argparse
+import glob
 import json
 import os
 import subprocess
@@ -40,14 +41,13 @@ def get_app_to_windows(clients_json, keys=None):
 
 
 def load_layout(filepath, app_set=None, keys=None):
-    # TODO layout file path to load, defaulting to hyprland layout history dir
     if keys is None:
         keys = ['class', 'title']
 
     # app set ignore case to load from layout
     # Get unique apps & windows
     with open(filepath) as openf:
-        apps = get_app_to_windows(json.load(openf))
+        apps = get_app_to_windows(json.load(openf), keys)
 
     # Get current open clients in case useful info
     before_load_apps = get_app_to_windows(
@@ -56,12 +56,9 @@ def load_layout(filepath, app_set=None, keys=None):
                 ['hyprctl', '-j', 'clients'],
                 capture_output=True,
             ).stdout
-        )
+        ),
+        keys,
     )
-
-    # NOTE may be good to open a terminal sized at the correct size
-    # that "swallows"/replaced by the target windows at same place
-    # and shape. This is how i3wm did it.
 
     loading_id = 1337
 
@@ -77,7 +74,7 @@ def load_layout(filepath, app_set=None, keys=None):
             # TODO replace the workspace ids with those known not in to be loaded or before loaded!
             subprocess.run(['hyprctl', f'dispatch workspace {loading_id}'])
             subprocess.run(['hyprctl', f'dispatch renameworkspace {loading_id} Loading {app}...'])
-            ack = subprocess.run(f'hyprctl dispatch exec "[workspace name:Loading {app}... silent;]" {app}', shell=True)
+            subprocess.run(f'hyprctl dispatch exec "[workspace name:Loading {app}... silent;]" {app}', shell=True)
 
         # Sleep to wait to load. TODO replace with better listener.
         subprocess.run(['sleep', '3'])
@@ -89,12 +86,14 @@ def load_layout(filepath, app_set=None, keys=None):
                     ['hyprctl', '-j', 'clients'],
                     capture_output=True,
                 ).stdout
-            )
+            ),
+            keys,
         )
 
-        # Matches determined by keys, e.g., window class and title.
+        # Matches determined by keys, defaulting to window class and title.
         # Matches are moved to layout's workspace, position, size, etc.
         updated_workspaces = set() # To avoid re-updating
+        unassigned = False
         for target, window in windows.items():
             # Get target data
             workspace_id = window['workspace']['id']
@@ -106,22 +105,24 @@ def load_layout(filepath, app_set=None, keys=None):
                 logger.info('target %s not in loaded_apps', target)
 
                 subprocess.run(['hyprctl', f'dispatch renameworkspace {loading_id} Unassigned {app}'])
-
-                loading_id += 1
+                unassigned = True
                 continue
 
             # Get source data
             address = loaded_apps[app][target]['address']
 
-            subprocess.run(f'hyprctl dispatch movetoworkspacesilent {workspace_id},address:{address}', shell=True)
+            subprocess.run(['hyprctl', f'dispatch movetoworkspacesilent {workspace_id},address:{address}'])
 
             if workspace_id not in updated_workspaces:
                 updated_workspaces.add(workspace_id)
                 subprocess.run(['hyprctl', f'dispatch moveworkspacetomonitor {workspace_id} {monitor}'])
                 subprocess.run(['hyprctl', f'dispatch renameworkspace {workspace_id} {workspace_name}'])
 
-        # TODO, now that all the windows are in the workspace, they need
-        # manipulated to match the desired layout..
+        if unassigned:
+            loading_id += 1
+        # TODO, now that all the windows are in their workspace, they need
+        # manipulated to match the desired layout.
+        # Use monitor resolution and each window's 'at' & 'size'
 
 
 if __name__ == '__main__':
@@ -145,14 +146,21 @@ if __name__ == '__main__':
         default=f'{base_dir}/load_layout_logs/'
     )
     # TODO Log level
+    # TODO log output Set args.load_layout_logs = f'{args.load_layout_logs}/test.log'
 
-
-    # TODO workspace arg to force a given layout on a specific workspace.
+    # TODO workspace_id arg to output a given layout on a specific workspace.
+    # TODO without executing/reopening apps, reorder into desired layout.
 
     args = parser.parse_args()
 
-    #if os.path.isdir(args.load_layout_logs):
-    #    args.load_layout_logs = f'{args.load_layout_logs}/test.log'
+    if os.path.isdir(args.path):
+        # Assumes is layout history and uses the most recent file by filesystem datetime
+        layouts = glob.glob(f'{args.path}/*')
+        args.path = max(layouts, key=os.path.getctime)
+    elif not os.path.isfile(args.path):
+        raise ValueError(f'{args.path} is neither a directory or a file.')
 
-    #load_layout(args.filepath, set(args.apps))
-    load_layout(f'{args.path}/2025-03-01_17-24-09-179432833.json', 'firefox')
+    if args.apps is not None:
+        args.apps = set([args.apps])
+
+    load_layout(args.path, args.apps)
