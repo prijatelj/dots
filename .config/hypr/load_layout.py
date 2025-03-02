@@ -8,7 +8,6 @@ to this script to move those windows back into the place they were before. This
 is to provide the functionality that is default in every desktop envrionment
 that window managers and wayland compositors seem to not provide by default.
 """
-# TODO make it load the layout without starting the app
 # TODO handle apps that don't save state since last close, but are to be run
 # per window, such as most terminals
 
@@ -40,7 +39,14 @@ def get_app_to_windows(clients_json, keys=None):
     return apps
 
 
-def load_layout(filepath, app_set=None, keys=None):
+def load_layout(
+    filepath,
+    app_set=None,
+    layout_existing=False,
+    run_apps=True,          # TODO make set/map for app specific run rules
+    run_per_windows=None,   # TODO run the app per window, rather than once
+    keys=None,
+):
     if keys is None:
         keys = ['class', 'title']
 
@@ -67,16 +73,17 @@ def load_layout(filepath, app_set=None, keys=None):
     for app, windows in apps.items():
         if app in before_load_apps:
             logger.warning('`%s` was running prior to loading layout.', app)
-            continue
-            # TODO add param to load w/o running, run anyways, or stop
+            if not layout_existing:
+                continue
         else:
             # Start application, if not already started. Important these don't get interuptted!
             # TODO replace the workspace ids with those known not in to be loaded or before loaded!
             subprocess.run(['hyprctl', f'dispatch workspace {loading_id}'])
             subprocess.run(['hyprctl', f'dispatch renameworkspace {loading_id} Loading {app}...'])
-            subprocess.run(f'hyprctl dispatch exec "[workspace name:Loading {app}... silent;]" {app}', shell=True)
+            if run_apps:
+                subprocess.run(f'hyprctl dispatch exec "[workspace name:Loading {app}... silent;]" {app}', shell=True)
 
-        # Sleep to wait to load. TODO replace with better listener.
+        # Sleep to wait to compelte loading. TODO replace with better listener.
         subprocess.run(['sleep', '3'])
 
         # Get new window data # TODO would be nice to target just tmp workspace
@@ -127,7 +134,10 @@ def load_layout(filepath, app_set=None, keys=None):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(prog='load_hypr_layout.py')
-    base_dir = '/home/prijatelj/.config/hypr'
+
+    home = os.environ['HOME']
+    base_dir = f'{home}/.config/hypr'
+
     parser.add_argument(
         '-p',
         '--path',
