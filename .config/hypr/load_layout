@@ -4,9 +4,7 @@ Load the Hyprland layout, defaulting to latest in layout history and assumes
 that the layout should not be loaded if the app is already running. This is
 primarily for restoring sessions after logging back into a new Hyprland session
 where the applications are assumed to restore their prior windows and it is up
-to this script to move those windows back into the place they were before. This
-is to provide the functionality that is default in every desktop envrionment
-that window managers and wayland compositors seem to not provide by default.
+to this script to move those windows back into the place they were before. 
 """
 # TODO handle apps that don't save state since last close, but are to be run
 # per window, such as most terminals
@@ -83,7 +81,7 @@ def load_layout(
             if run_apps:
                 subprocess.run(f'hyprctl dispatch exec "[workspace name:Loading {app}... silent;]" {app}', shell=True)
 
-        # Sleep to wait to compelte loading. TODO replace with better listener.
+        # Sleep to wait to complete loading. TODO replace with better listener.
         subprocess.run(['sleep', '3'])
 
         # Get new window data # TODO would be nice to target just tmp workspace
@@ -98,7 +96,7 @@ def load_layout(
         )
 
         # Matches determined by keys, defaulting to window class and title.
-        # Matches are moved to layout's workspace, position, size, etc.
+        # Matches are moved to layout's workspace
         updated_workspaces = set() # To avoid re-updating
         unassigned = False
         for target, window in windows.items():
@@ -143,6 +141,7 @@ if __name__ == '__main__':
         '--path',
         default=f'{base_dir}/layout_history'
     )
+    # TODO enable nargs for multiple apps given, rather than only one
     parser.add_argument(
         '-a',
         '--include_apps',
