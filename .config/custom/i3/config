@@ -132,16 +132,16 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 ## Another set of numbered workspaces
-set $wsC1 "C1"
-set $wsC2 "C2"
-set $wsC3 "C3"
-set $wsC4 "C4"
-set $wsC5 "C5"
-set $wsC6 "C6"
-set $wsC7 "C7"
-set $wsC8 "C8"
-set $wsC9 "C9"
-set $wsC10 "C10"
+set $wsC1 "11"
+set $wsC2 "12"
+set $wsC3 "13"
+set $wsC4 "14"
+set $wsC5 "15"
+set $wsC6 "16"
+set $wsC7 "17"
+set $wsC8 "18"
+set $wsC9 "19"
+set $wsC10 "20"
 
 ## switch to workspace
 bindsym $mod+Ctrl+1 workspace $wsC1
@@ -247,12 +247,12 @@ workspace 1 output DP-2
 # shift for large jump, slash to mute.
 # TODO consider default: 5, ctrl 1, shift 10.
 # Up/Down 1%
-bindsym $mod+period exec "amixer -q sset Master,0 1+ unmute"
-bindsym $mod+comma exec "amixer -q sset Master,0 1- unmute"
+bindsym $mod+period exec "amixer -q sset Master 1%+ unmute"
+bindsym $mod+comma exec "amixer -q sset Master 1%- unmute"
 
 # Up/Down 5%
-bindsym $mod+Shift+period exec "amixer -q sset Master,0 5+ unmute"
-bindsym $mod+Shift+comma exec "amixer -q sset Master,0 5- unmute"
+bindsym $mod+Shift+period exec "amixer -q sset Master 5%+ unmute"
+bindsym $mod+Shift+comma exec "amixer -q sset Master 5%- unmute"
 
 bindsym XF86AudioRaiseVolume exec "amixer -q sset Master 5%+ unmute"
 bindsym XF86AudioLowerVolume exec "amixer -q sset Master 5%- unmute"
