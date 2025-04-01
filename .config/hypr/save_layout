@@ -5,6 +5,8 @@ mkdir -p $HYPRLAND_LAYOUT_DIR
 # Save `hyprctl clients`
 hyprctl -j clients > $HYPRLAND_LAYOUT_DIR/$(date +%Y-%m-%d_%H-%M-%S-%N).json
 
+# TODO Before continuing, ensure it is not an empty file!!
+
 # Clean up old layouts with a move to layouts/old/date, and clean layouts/old/ by set duration to keep
 RM_LIST=$(for i in $(ls --sort time $HYPRLAND_LAYOUT_DIR | tail -n +$HYPRLAND_LAYOUT_HISTORY_SIZE); do echo "$HYPRLAND_LAYOUT_DIR/$i";  done)
 
