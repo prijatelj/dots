@@ -37,3 +37,5 @@ alias nd_vpn='openconnect-sso -s vpnaccess.nd.edu/nosplit'
 
 # Set manpath variable to include local man pages
 #export MANPATH="$(manpath):$HOME/.local/share/man/"
+export STARSHIP_CONFIG=~/.config/custom/starship.toml
+eval $(starship init bash)
